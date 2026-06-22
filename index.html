@@ -1,214 +1,267 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>往来｜VRChat・メタバースのイマーシブコンテンツ制作｜企業・自治体向け</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>往来｜XR・AI・リアル空間を横断する体験設計スタジオ</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* ── ハンバーガーメニュー ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  background: none;
+  border: none;
+  margin-left: 12px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all .25s;
+}
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 8px 0 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  z-index: 99;
+}
+.mobile-nav a {
+  display: block;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: .06em;
+  border-bottom: 1px solid var(--line);
+}
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav.open { display: block; }
+
+/* ── レスポンシブ補完 ── */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav .btn-dl { display: none; }
+  .nav .btn-mail { width: 64px; font-size: 17px; }
+  h1.page-title { font-size: clamp(30px, 9vw, 44px); }
+  section { padding: 56px 0; }
+  .wrap { padding: 0 20px; }
+  .sub-grid { grid-template-columns: 1fr !important; }
+  .cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+}
+</style>
 </head>
 <body>
 
 <header>
   <div class="nav">
-    <a class="logo" href="index.html"><img src="https:assets/images/logo.png" alt="往来 OURAI" style="height:34px;display:block"></a>
-    <nav><ul>
-      <li><a href="about.html">ABOUT</a></li>
-      <li><a href="service.html">SERVICE</a></li>
-      <li><a href="case.html">CASE</a></li>
-      <li><a href="news.html">NEWS</a></li>
-    </ul></nav>
+    <a class="logo" href="index.html">
+      <img src="assets/images/logo.png" alt="" style="height:34px;display:block"
+           onerror="this.style.display='none';document.getElementById('logo-text').style.display='block'">
+      <span id="logo-text" style="display:none;font-size:18px;font-weight:900;letter-spacing:-.02em">往来 <small style="font-size:10px;letter-spacing:.18em;font-weight:600">OURAI</small></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="case.html">CASE</a></li>
+        <li><a href="news.html">NEWS</a></li>
+      </ul>
+    </nav>
     <a class="btn-dl" href="#">資料DL</a>
     <a class="btn-mail" href="contact.html">✉</a>
+    <button class="hamburger" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="about.html">ABOUT</a>
+    <a href="service.html">SERVICE</a>
+    <a href="case.html">CASE</a>
+    <a href="news.html">NEWS</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- ① HERO -->
 <section style="padding:140px 0 100px">
   <div class="wrap">
-    <div class="sec-label">Beyond Reality: Metaverse Branding</div>
-    <h1 class="page-title">仮想と現実を、<br>往来する。</h1>
-    <p class="lead">メタバースプロモーション・LBE・産業XR・アバターファッション。つくるだけでなく、話題をつくり、成果にするまでが私たちの仕事です。</p>
-    <div style="display:flex;gap:16px;margin-top:40px">
-      <a class="btn-solid" href="#">資料ダウンロード</a>
+    <div class="sec-label">仮想と現実を、往来する。</div>
+    <h1 class="page-title">人の記憶に残る<br>体験を設計する。</h1>
+    <p class="lead">企業や自治体の新しい挑戦を、<br>VRChat・XR・AI・リアル空間を横断して、<br>人の記憶に残る体験へと実装します。</p>
+    <div style="display:flex;gap:16px;margin-top:40px;flex-wrap:wrap">
+      <a class="btn-solid" href="case.html">実績を見る</a>
       <a class="btn-solid" style="background:var(--purple)" href="contact.html">お問い合わせ</a>
     </div>
   </div>
 </section>
 
-<!-- SERVICE：6本（01〜04大カード＋05〜06小カード） -->
+<!-- ② WHO WE ARE -->
+<section style="background:var(--white)">
+  <div class="wrap" style="max-width:760px">
+    <div class="sec-label">WHO WE ARE</div>
+    <h2 style="font-size:clamp(24px,3.4vw,36px);line-height:1.45">新しい挑戦を、体験として実現する。</h2>
+    <p class="lead" style="margin-top:28px">
+      往来は、企業や自治体の新しい取り組みを、<br>
+      VRChat・XR・AI・リアルイベントを横断しながら、<br>
+      人が参加し、記憶に残る体験として実装する会社です。<br><br>
+      まだ世の中に前例の少ない企画でも、<br>
+      目的に合わせて設計し、企画・制作・運営まで一貫して形にします。
+    </p>
+  </div>
+</section>
+
+<!-- ③ SERVICE -->
 <section style="background:var(--bg-2)">
   <div class="wrap">
     <div class="sec-label">SERVICE</div>
     <h2>事業内容</h2>
-    <p class="lead" style="margin-bottom:48px">メタバースプロモーション、アバターファッション、LBE、産業XR。4つの領域すべてで、企画から運用まで一貫して伴走します。</p>
+    <p class="lead" style="margin-bottom:48px">
+      企業や自治体の挑戦を、体験に変える。<br>
+      往来は目的に合わせて、XR、AI、リアル空間、バーチャル空間を柔軟に組み合わせます。
+    </p>
 
     <a class="svc-row" href="service.html#promotion">
       <div class="body">
         <span class="svc-num">01</span>
-        <h3>メタバース体験型プロモーション・戦略PR</h3>
-        <p>ワールドの企画・制作、戦略PR・イベント、インフルエンサー・UGC施策、そして運用・保守。話題も数字も、つくるところまで設計します。</p>
+        <h3>VRChat・XRプロモーション</h3>
+        <p>VRChatを中心に、ブランドの世界観やメッセージを体験として届けるプロモーションを企画・制作します。ワールド制作、イベント、コミュニティ施策まで対応します。</p>
       </div>
       <div class="circle">→</div>
     </a>
-    <a class="svc-row" href="service.html#fashion">
+    <a class="svc-row" href="service.html#cultural">
       <div class="body">
         <span class="svc-num">02</span>
-        <h3>アバターファッション・バーチャルアパレル</h3>
-        <p>横須賀市メタバース施策「メタバースヨコスカ」のアバター向けスカジャン3D衣装は、15万着超のダウンロードを記録。企業コラボ衣装の企画・制作も、販売コンサルティングも手がけます。</p>
+        <h3>地域や文化資源の体験化</h3>
+        <p>自治体や地域が持つ魅力、歴史、文化資源を、バーチャル空間や展示体験として再構成し、伝わる形にします。</p>
       </div>
       <div class="circle">→</div>
     </a>
-    <a class="svc-row" href="service.html#lbe">
+    <a class="svc-row" href="service.html#immersive">
       <div class="body">
         <span class="svc-num">03</span>
-        <h3>LBE（ロケーションベースドエンターテインメント）</h3>
-        <p>体験設計、XRコンテンツ開発、運用設計、集客プロモーション連動。物理空間とデジタルの両方を扱えるからこそ、施設・イベントの没入体験を丸ごと構築できます。</p>
+        <h3>展示・LBE・イベント空間の体験設計</h3>
+        <p>展示会、商業施設、イベント会場などで、人が参加し、記憶に残る体験空間を設計します。</p>
       </div>
       <div class="circle">→</div>
     </a>
-    <a class="svc-row" href="service.html#industrial">
+    <a class="svc-row" href="service.html#future">
       <div class="body">
         <span class="svc-num">04</span>
-        <h3>産業XRコンテンツ制作</h3>
-        <p>研究機関・製造業・自治体のパートナーとして、バーチャル展示・ショールーム、教育・研修コンテンツ、3Dデータ最適化を提供。研究や文化資産のXR化にも対応します。</p>
+        <h3>AIとXRを活用したプロトタイピング</h3>
+        <p>AIやXR技術を活用し、新しい体験企画の検証やプロトタイプ制作を支援します。</p>
       </div>
       <div class="circle">→</div>
     </a>
-
-    <!-- 05〜06小カード -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px" class="sub-grid">
-      <a class="card" href="service.html#support" style="padding:32px 30px">
-        <span class="svc-num">05</span>
-        <h3 style="font-size:18px;margin:6px 0 10px">XR新規事業支援・導入サポート</h3>
-        <p style="font-size:13.5px;color:var(--text-2)">コンサルティング・勉強会・体験会・新規事業支援。XRの導入をゼロから伴走します。</p>
-      </a>
-      <a class="card" href="service.html#research" style="padding:32px 30px">
-        <span class="svc-num">06</span>
-        <h3 style="font-size:18px;margin:6px 0 10px">調査・分析 &amp; レポーティング</h3>
-        <p style="font-size:13.5px;color:var(--text-2)">ユーザー分析・市場調査・レポーティング・執筆・登壇。著書2冊（MdNコーポレーション）。</p>
-      </a>
-    </div>
   </div>
 </section>
 
-<!-- OUR STRENGTH -->
+<!-- ④ WHY OURAI -->
 <section style="background:var(--white)">
   <div class="wrap">
-    <div class="sec-label">OUR STRENGTH</div>
-    <h2>往来の強み</h2>
-
+    <div class="sec-label">WHY OURAI</div>
+    <h2>なぜ往来なのか</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px" class="sub-grid">
       <div class="card" style="padding:40px 36px">
-        <span class="svc-num">STRENGTH 01</span>
-        <h3 style="font-size:20px;margin:10px 0 14px">入口から出口まで、すべて一社で</h3>
-        <p style="font-size:14px;color:var(--text-2)">企画→制作→PR→運用を一気通貫。"つくって終わり"にしない。コミュニティ×クリエイター×VRインフルエンサー×メディアを巻き込むPRエコシステムで話題をつくるところまで設計。グラフィック・Web・インフラまで各分野のプロが揃い、発注先が割れません。</p>
+        <span class="svc-num">01</span>
+        <h3 style="font-size:20px;margin:10px 0 14px">新しい技術を、最初の成功体験へ導く</h3>
+        <p style="font-size:14px;color:var(--text-2)">前例の少ない企画でも、目的に合わせて設計し、実現可能な体験へ落とし込みます。</p>
       </div>
       <div class="card" style="padding:40px 36px">
-        <span class="svc-num">STRENGTH 02</span>
-        <h3 style="font-size:20px;margin:10px 0 14px">どこにも属さない、独立スタジオ</h3>
-        <p style="font-size:14px;color:var(--text-2)">固定の制作チームを抱えず、コンサルファームのようにプロジェクトごとに各分野のプロでチームを編成。資本や系列に縛られない独立スタジオだから、座組は目的と予算だけで設計でき、意思決定も開発も速い。中間コストが乗らないぶん、予算は体験の質に直結します。</p>
+        <span class="svc-num">02</span>
+        <h3 style="font-size:20px;margin:10px 0 14px">企画・制作・運営まで一気通貫</h3>
+        <p style="font-size:14px;color:var(--text-2)">アイデア段階から、体験設計、制作、当日の運営まで、プロジェクト全体を見通して進行します。</p>
+      </div>
+      <div class="card" style="padding:40px 36px">
+        <span class="svc-num">03</span>
+        <h3 style="font-size:20px;margin:10px 0 14px">VRChatコミュニティへの深い理解</h3>
+        <p style="font-size:14px;color:var(--text-2)">VRChat上の文化やユーザー行動を理解したうえで、企業や自治体の企画を自然な体験へ変換します。</p>
+      </div>
+      <div class="card" style="padding:40px 36px">
+        <span class="svc-num">04</span>
+        <h3 style="font-size:20px;margin:10px 0 14px">案件ごとに最適なチームを組成</h3>
+        <p style="font-size:14px;color:var(--text-2)">3D、映像、イベント、AI、Webなど、企画に応じて適切なクリエイターや技術者と連携します。</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- VRChat枠外 -->
-    <div style="margin-top:40px;padding:36px;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 100%);border-radius:16px;color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
+<!-- ⑤ OFFICIAL PARTNER（WHY OURAIの直後） -->
+<section style="background:var(--bg-2)">
+  <div class="wrap">
+    <div style="padding:36px;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 100%);border-radius:16px;color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
       <div>
         <div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.15em;opacity:.8;margin-bottom:8px">OFFICIAL PARTNER</div>
-        <h3 style="font-size:22px;margin:0 0 10px;color:#fff">VRChatのプロフェッショナル</h3>
-        <p style="font-size:14px;opacity:.9;margin:0">日本で3社目となるVRChat社公式パートナー。契約上の信頼に加え、住人として文化を理解している実態があります。アンバサダー・マイクロインフルエンサー設計からUGC施策まで、VRChatにおいては別格の実行力。</p>
+        <h3 style="font-size:22px;margin:0 0 10px;color:#fff">VRChat Official Partner</h3>
+        <p style="font-size:14px;opacity:.9;margin:0;max-width:560px">往来はVRChatの公式パートナーとして、企業・自治体のVRChat活用を支援しています。企画設計、ワールド制作、イベント運営までご相談いただけます。</p>
       </div>
-      <a class="btn-solid" href="#vrchat" style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);white-space:nowrap">詳細を見る →</a>
+      <a class="btn-solid" href="about.html#vrchat" style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);white-space:nowrap;flex-shrink:0">詳しく見る →</a>
     </div>
   </div>
 </section>
 
-<!-- CASE pickup -->
+<!-- ⑥ FEATURED WORKS -->
 <section>
   <div class="wrap">
-    <div class="sec-label">CASE</div>
+    <div class="sec-label">FEATURED WORKS</div>
     <h2>実績</h2>
-    <p class="lead" style="margin-bottom:48px">国内大手企業・自治体・研究機関を含むクライアントと、数々のプロジェクトを実現してきました。</p>
-    <div class="cards">
-      <a class="card" href="feature-mos.html">
-        <div class="thumb"><img src="https:assets/images/slide/2304_p_img_mos_okada_image01.jpg" alt=""></div>
-        <div class="body">
-          <div class="platform">VRChat</div>
-          <h3>モスバーガー「MOS BURGER ON THE MOON」｜8日間で80万食、"一時休売"を生んだバーチャル調理体験</h3>
-          <div class="tags"><span class="tag cat">プロモーション</span><span class="tag">体験型</span><span class="tag">PR施策</span></div>
-        </div>
-      </a>
-      <a class="card" href="feature-nissan-beams.html">
-        <div class="thumb">IMAGE：NISSAN × BEAMS</div>
-        <div class="body">
-          <div class="platform">VRChat</div>
-          <h3>日産 × BEAMS：ファッションとモビリティが交差するバーチャル空間</h3>
-          <div class="tags"><span class="tag cat">プロモーション</span><span class="tag">ワールド制作</span><span class="tag">アバター衣装</span></div>
-        </div>
-      </a>
-      <a class="card" href="feature-yokosuka.html">
-        <div class="thumb">IMAGE：メタバースヨコスカ</div>
-        <div class="body">
-          <div class="platform">VRChat</div>
-          <h3>横須賀市「メタバースヨコスカ」｜自治体メタバース活用の代表事例</h3>
-          <div class="tags"><span class="tag cat">プロモーション</span><span class="tag">自治体</span><span class="tag">アバターファッション</span></div>
-        </div>
-      </a>
+    <p class="lead" style="margin-bottom:48px">企業や自治体の挑戦を、体験として形にしてきました。</p>
+    <div class="cards" id="works-grid"></div>
+    <div style="text-align:center;margin-top:48px">
+      <a class="btn-solid" href="case.html">実績一覧を見る</a>
     </div>
-    <div style="text-align:center;margin-top:48px"><a class="btn-solid" href="case.html">実績一覧を見る</a></div>
   </div>
 </section>
 
-<!-- VRChat partnership -->
-<section id="vrchat" style="background:var(--white)">
-  <div class="wrap" style="display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center">
+<!-- ⑦ COMMUNITY -->
+<section style="background:var(--bg-2)">
+  <div class="wrap sub-grid" style="display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center">
+    <div class="hero-img" style="margin:0;aspect-ratio:4/3">COMMUNITY IMAGE</div>
     <div>
-      <div class="sec-label">PARTNERSHIP</div>
-      <h2>VRChatとの<br>パートナーシップについて</h2>
-      <div style="display:inline-block;background:linear-gradient(120deg,var(--blue),var(--purple));color:#fff;font-weight:700;font-size:14px;letter-spacing:.05em;border-radius:99px;padding:10px 26px;margin-bottom:20px">日本で3社目の VRChat社 公式パートナー</div>
-      <p class="lead">株式会社「往来」は、日本で3社目となるVRChat社の正式パートナーです。コミュニティへの深い理解と、アンバサダー・KOL設計の実績。企業とコミュニティをつなぐ架け橋として、多方面のコミュニティと深く連携しています。</p>
-      <div style="font-size:12px;font-weight:700;letter-spacing:.15em;color:var(--text-3);margin-top:32px">VRCHAT DATA</div>
-      <div class="stats" style="margin-top:12px">
-        <div><b>700万+</b><span>全世界ユーザー数</span></div>
-        <div><b>世界2位</b><span>日本のユーザー比率 約27%</span></div>
-        <div><b>20代中心</b><span>購買力あるユーザー層</span></div>
-      </div>
+      <div class="sec-label">COMMUNITY</div>
+      <h2>クリエイターネットワーク<br>往来BASE</h2>
+      <p class="lead">クリエイター、エンジニア、企画者が集まり、企業や自治体の新しい体験づくりを支えるコミュニティです。</p>
     </div>
-    <div class="hero-img" style="margin:0;aspect-ratio:4/3">IMAGE：VRChat partnership</div>
   </div>
 </section>
 
-<!-- NEWS -->
+<!-- ⑧ NEWS -->
 <section>
   <div class="wrap">
     <div class="sec-label">NEWS</div>
     <h2>お知らせ</h2>
-    <div class="news-item"><time>2026/--/--</time><span class="chip">リリース</span><a href="#">（プレースホルダー・STUDIO CMSで管理）</a></div>
-    <div class="news-item"><time>2026/--/--</time><span class="chip">お知らせ</span><a href="#">（STUDIO CMSで管理・最新3件を表示）</a></div>
+    <div class="news-item"><time>2026/--/--</time><span class="chip">リリース</span><a href="#">（プレースホルダー・CMS管理）</a></div>
+    <div class="news-item"><time>2026/--/--</time><span class="chip">お知らせ</span><a href="#">（最新3件を表示）</a></div>
     <div class="news-item"><time>2026/--/--</time><span class="chip">お知らせ</span><a href="#">（プレースホルダー）</a></div>
-    <div style="text-align:right;margin-top:24px"><a class="btn" href="news.html">一覧を見る <span class="circle" style="width:44px;height:44px;font-size:15px">→</span></a></div>
-  </div>
-</section>
-
-<!-- 往来BASE -->
-<section style="background:var(--bg-2)">
-  <div class="wrap" style="display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center">
-    <div class="hero-img" style="margin:0;aspect-ratio:4/3">IMAGE：往来BASE</div>
-    <div>
-      <div class="sec-label">往来BASE</div>
-      <h2>クリエイターネットワーク<br>往来BASE</h2>
-      <p class="lead">「往来BASE」はDiscord上のクリエイター・コミュニティ。VRChatの最新動向共有、定期イベント開催、クリエイターとクライアントのマッチングを行っています。このコミュニティへの深い根を持つことが、往来の一気通貫体制を支えています。</p>
+    <div style="text-align:right;margin-top:24px">
+      <a class="btn" href="news.html">一覧を見る <span class="circle" style="width:44px;height:44px;font-size:15px">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- ⑨ CONTACT -->
 <div class="cta-foot">
   <span class="sec-label">CONTACT</span>
-  <h2>まずは、お気軽にご連絡を</h2>
-  <div style="display:flex;gap:16px;justify-content:center;margin-top:32px">
-    <a class="btn-solid" style="background:var(--blue)" href="#">資料ダウンロード</a>
+  <h2>まずは、お気軽にご相談ください。</h2>
+  <p style="max-width:520px;margin:16px auto 0;font-size:15px;opacity:.7">VRChat、XR、AI、展示、イベントなど、まだ形になっていない企画段階からご相談いただけます。</p>
+  <div style="display:flex;gap:16px;justify-content:center;margin-top:32px;flex-wrap:wrap">
     <a class="btn-solid" style="background:var(--purple)" href="contact.html">お問い合わせ</a>
+    <a class="btn-solid" style="background:var(--blue)" href="case.html">実績を見る</a>
   </div>
 </div>
 
@@ -217,7 +270,10 @@
 <footer>
   <div class="wrap">
     <div>
-      <img src="https:assets/images/logo.png" alt="往来 OURAI" style="height:30px;margin-bottom:16px;filter:invert(1)">
+      <img src="assets/images/logo.png" alt="往来 OURAI" style="height:30px;margin-bottom:12px;filter:invert(1)" onerror="this.style.display='none'">
+      <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0 0 14px;line-height:1.9">
+        XR・AI・リアル空間を横断し、<br>企業や自治体の新しい体験を企画・制作・運営するクリエイティブスタジオです。
+      </p>
       株式会社 往来　代表取締役社長：東 智美<br>
       〒107-0052 東京都港区赤坂9-6-30 ルイマーブル乃木坂408
     </div>
@@ -226,11 +282,77 @@
       <li><a href="service.html">SERVICE</a></li>
       <li><a href="case.html">CASE</a></li>
       <li><a href="news.html">NEWS</a></li>
-      <li><a href="#">CONTACT</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
     </ul>
     <div class="copy">©️ OURAI Co.,Ltd.</div>
   </div>
 </footer>
+
+<script>
+/* ── 実績データ（追加・並び替えはここを編集） ── */
+const worksData = [
+  {
+    client:      '横須賀市',
+    title:       'メタバースヨコスカ',
+    description: '地域の魅力をVRChat上で体験化した観光プロモーション。',
+    tags:        ['VRChat', '自治体', '観光PR'],
+    image:       'assets/images/slide/pf_yokosuka_2023_10_01.jpg',
+    link:        'feature-yokosuka.html',
+  },
+  {
+    client:      '日産自動車 × BEAMS',
+    title:       'VRChatコラボレーション企画',
+    description: 'ブランドとコミュニティをつなぐバーチャルイベントを企画・制作。',
+    tags:        ['VRChat', 'ブランド', 'イベント'],
+    image:       'assets/images/pf_nissan_heritageworld_202403_01.jpg',
+    link:        'feature-nissan-beams.html',
+  },
+  {
+    client:      'マクドナルド',
+    title:       'バーチャルブランド体験',
+    description: 'バーチャル空間を活用したブランドプロモーションを制作。',
+    tags:        ['VRChat', 'プロモーション', '体験設計'],
+    image:       'assets/images/pf_img_mcvr.jpg',
+    link:        'case.html',
+  },
+];
+
+const grid = document.getElementById('works-grid');
+worksData.forEach((w, i) => {
+  const tagHtml = w.tags.map((t, j) =>
+    `<span class="tag${j === 0 ? ' cat' : ''}">${t}</span>`
+  ).join('');
+  const thumbHtml = w.image
+    ? `<img src="${w.image}" alt="${w.title}" style="width:100%;height:100%;object-fit:cover">`
+    : `<span style="font-size:11px;letter-spacing:.1em;color:var(--text-3)">CASE IMAGE</span>`;
+  grid.innerHTML += `
+    <a class="card" href="${w.link}">
+      <div class="thumb" style="overflow:hidden">${thumbHtml}</div>
+      <div class="body">
+        <div class="platform">${w.client}</div>
+        <h3>${w.title}</h3>
+        <p style="font-size:13px;color:var(--text-2);margin:4px 0 12px;line-height:1.7">${w.description}</p>
+        <div class="tags">${tagHtml}</div>
+      </div>
+    </a>`;
+});
+
+/* ── ハンバーガーメニュー ── */
+const menuBtn   = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+menuBtn.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', isOpen);
+  mobileNav.setAttribute('aria-hidden', !isOpen);
+});
+/* ナビリンクをタップしたら閉じる */
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
 
 </body>
 </html>
