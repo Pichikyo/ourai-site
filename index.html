@@ -62,6 +62,8 @@
 @media (max-width: 900px) {
   .hamburger { display: flex; }
 }
+/* ── 可読性向上 ── */
+.lead { font-size: 16px; line-height: 2.05; }
 </style>
 </head>
 <body>
@@ -101,9 +103,9 @@
 <!-- ① HERO -->
 <section style="padding:140px 0 100px">
   <div class="wrap">
-    <div class="sec-label">仮想と現実を、往来する。</div>
-    <h1 class="page-title">人の記憶に残る<br>体験を設計する。</h1>
-    <p class="lead">企業や自治体の新しい挑戦を、<br>VRChat・XR・AI・リアル空間を横断して、<br>人の記憶に残る体験へと実装します。</p>
+    <h1 class="page-title">仮想と現実を、<br>往来する。</h1>
+    <p style="font-size:clamp(18px,2.2vw,24px);font-weight:700;color:var(--text-2);letter-spacing:.03em;line-height:1.5;margin:0 0 24px">人の記憶に残る<br>体験を設計する。</p>
+    <p class="lead">企業や自治体の新しい挑戦を、<br>XR・VRChat・AI・リアル空間を横断して、<br>人が参加し、理解し、記憶に残る体験へと実装します。</p>
     <div style="display:flex;gap:16px;margin-top:40px;flex-wrap:wrap">
       <a class="btn-solid" href="case.html">実績を見る</a>
       <a class="btn-solid" style="background:var(--purple)" href="contact.html">お問い合わせ</a>
@@ -118,9 +120,9 @@
     <h2 style="font-size:clamp(24px,3.4vw,36px);line-height:1.45">新しい挑戦を、体験として実現する。</h2>
     <p class="lead" style="margin-top:28px">
       往来は、企業や自治体の新しい取り組みを、<br>
-      VRChat・XR・AI・リアルイベントを横断しながら、<br>
-      人が参加し、記憶に残る体験として実装する会社です。<br><br>
-      まだ世の中に前例の少ない企画でも、<br>
+      XR・VRChat・AI・リアルイベントを横断しながら、<br>
+      人が参加し、理解し、記憶に残る体験として実装する会社です。<br><br>
+      専門的で伝わりにくい情報や、現地で体験しづらい対象も、<br>
       目的に合わせて設計し、企画・制作・運営まで一貫して形にします。
     </p>
   </div>
@@ -136,35 +138,35 @@
       往来は目的に合わせて、XR、AI、リアル空間、バーチャル空間を柔軟に組み合わせます。
     </p>
 
-    <a class="svc-row" href="service.html#promotion">
+    <a class="svc-row" href="service.html#industrial">
       <div class="body">
         <span class="svc-num">01</span>
-        <h3>VRChat・XRプロモーション</h3>
-        <p>VRChatを中心に、ブランドの世界観やメッセージを体験として届けるプロモーションを企画・制作します。ワールド制作、イベント、コミュニティ施策まで対応します。</p>
+        <h3>教育・産業向けXRコンテンツ</h3>
+        <p>研究施設、設備、作業手順、専門知識など、通常は体験しづらい対象を、XRで安全に学べるコンテンツとして設計・制作します。</p>
       </div>
       <div class="circle">→</div>
     </a>
     <a class="svc-row" href="service.html#cultural">
       <div class="body">
         <span class="svc-num">02</span>
-        <h3>地域や文化資源の体験化</h3>
-        <p>自治体や地域が持つ魅力、歴史、文化資源を、バーチャル空間や展示体験として再構成し、伝わる形にします。</p>
+        <h3>自治体・地域文化のXR体験化</h3>
+        <p>自治体や地域が持つ観光資源、歴史、文化、施設の魅力を、バーチャル空間や展示体験として再構成し、伝わる形にします。</p>
+      </div>
+      <div class="circle">→</div>
+    </a>
+    <a class="svc-row" href="service.html#promotion">
+      <div class="body">
+        <span class="svc-num">03</span>
+        <h3>VRChat・XRプロモーション</h3>
+        <p>VRChatを中心に、ブランドの世界観やメッセージを体験として届けるプロモーションを企画・制作します。ワールド制作、イベント、コミュニティ施策まで対応します。</p>
       </div>
       <div class="circle">→</div>
     </a>
     <a class="svc-row" href="service.html#immersive">
       <div class="body">
-        <span class="svc-num">03</span>
-        <h3>展示・LBE・イベント空間の体験設計</h3>
-        <p>展示会、商業施設、イベント会場などで、人が参加し、記憶に残る体験空間を設計します。</p>
-      </div>
-      <div class="circle">→</div>
-    </a>
-    <a class="svc-row" href="service.html#future">
-      <div class="body">
         <span class="svc-num">04</span>
-        <h3>AIとXRを活用したプロトタイピング</h3>
-        <p>AIやXR技術を活用し、新しい体験企画の検証やプロトタイプ制作を支援します。</p>
+        <h3>展示・LBE・イベント空間の体験設計</h3>
+        <p>展示会、商業施設、イベント会場などで、人が参加し、理解し、記憶に残る体験空間を設計します。</p>
       </div>
       <div class="circle">→</div>
     </a>
@@ -180,7 +182,7 @@
       <div class="card" style="padding:40px 36px">
         <span class="svc-num">01</span>
         <h3 style="font-size:20px;margin:10px 0 14px">新しい技術を、最初の成功体験へ導く</h3>
-        <p style="font-size:14px;color:var(--text-2)">前例の少ない企画でも、目的に合わせて設計し、実現可能な体験へ落とし込みます。</p>
+        <p style="font-size:14px;color:var(--text-2)">前例の少ない企画でも、目的に合わせて設計し、専門的で伝わりにくい情報を、参加して理解できる体験へ落とし込みます。</p>
       </div>
       <div class="card" style="padding:40px 36px">
         <span class="svc-num">02</span>
@@ -292,6 +294,14 @@
 /* ── 実績データ（追加・並び替えはここを編集） ── */
 const worksData = [
   {
+    client:      '高エネルギー加速器研究機構 KEK',
+    title:       '加速器ワールド制作',
+    description: '巨大な研究施設や加速器の仕組みを、VRChat上で体験的に学べる教育用ワールドとして制作。',
+    tags:        ['VRChat', '教育XR', '科学コミュニケーション', '研究施設'],
+    image:       '',
+    link:        'case.html',
+  },
+  {
     client:      '横須賀市',
     title:       'メタバースヨコスカ',
     description: '地域の魅力をVRChat上で体験化した観光プロモーション。',
@@ -306,14 +316,6 @@ const worksData = [
     tags:        ['VRChat', 'ブランド', 'イベント'],
     image:       'assets/images/pf_nissan_heritageworld_202403_01.jpg',
     link:        'feature-nissan-beams.html',
-  },
-  {
-    client:      'マクドナルド',
-    title:       'バーチャルブランド体験',
-    description: 'バーチャル空間を活用したブランドプロモーションを制作。',
-    tags:        ['VRChat', 'プロモーション', '体験設計'],
-    image:       'assets/images/pf_img_mcvr.jpg',
-    link:        'case.html',
   },
 ];
 
@@ -331,7 +333,7 @@ worksData.forEach((w, i) => {
       <div class="body">
         <div class="platform">${w.client}</div>
         <h3>${w.title}</h3>
-        <p style="font-size:13px;color:var(--text-2);margin:4px 0 12px;line-height:1.7">${w.description}</p>
+        <p style="font-size:14px;color:var(--text-2);margin:4px 0 12px;line-height:1.85">${w.description}</p>
         <div class="tags">${tagHtml}</div>
       </div>
     </a>`;
