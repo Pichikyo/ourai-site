@@ -5,24 +5,26 @@
 <title>SERVICE｜往来 - 事業内容</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* ── Service listing: compact ── */
-.svc-block { padding: 64px 0; }
+.svc-block { padding: 72px 0; }
 .svc-block + .svc-block { border-top: 1px solid var(--line); }
-.svc-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px; }
-.svc-head h2 { font-size: clamp(22px, 2.8vw, 30px); margin: 0; }
-.svc-img { height: 200px; border-radius: 10px; background: linear-gradient(135deg,#dfe3ee,#cfd6e8); display: flex; align-items: center; justify-content: center; color: var(--text-3); font-size: 12px; letter-spacing: .08em; margin: 24px 0; overflow: hidden; }
-.svc-img img { width: 100%; height: 100%; object-fit: cover; }
-.info-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 32px; }
-.info-box { background: var(--bg); border-radius: 8px; padding: 16px 18px; }
-.info-box .label { font-size: 11px; font-weight: 700; color: var(--text-3); letter-spacing: .12em; margin: 0 0 10px; }
-.info-box ul { list-style: none; padding: 0; margin: 0; font-size: 13px; color: var(--text-2); line-height: 2; }
-.works-label { font-size: 11px; font-weight: 700; color: var(--text-3); letter-spacing: .12em; margin: 0 0 14px; }
-.svc-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--blue); margin-top: 24px; }
-.svc-link:hover { opacity: .65; }
-@media (max-width: 600px) {
-  .info-cols { grid-template-columns: 1fr; }
-  .svc-img { height: 140px; }
+.svc-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+.svc-head h2 { font-size: clamp(26px, 3.2vw, 38px); margin: 0; }
+.svc-lead { font-size: 17px; color: var(--text-2); max-width: 680px; line-height: 2.1; margin: 0 0 40px; }
+.info-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 0 0 40px; }
+.info-box .info-label {
+  display: block;
+  font-size: 12px; font-weight: 800; letter-spacing: .14em;
+  color: var(--text-3);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--line);
+  margin: 0 0 18px;
 }
+.info-box.solution .info-label { color: var(--blue); border-bottom-color: var(--blue); }
+.info-box ul { list-style: none; padding: 0; margin: 0; font-size: 15px; color: var(--text-2); line-height: 2.2; }
+.info-box ul li::before { content: "— "; color: var(--text-3); }
+.info-box.solution ul li::before { color: var(--blue); }
+.works-label { font-size: 11px; font-weight: 700; color: var(--text-3); letter-spacing: .12em; margin: 0 0 14px; }
+@media (max-width: 600px) { .info-cols { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -60,21 +62,19 @@
     <span class="svc-num">01</span>
     <h2>教育・産業向けXRコンテンツ</h2>
   </div>
-  <p style="color:var(--text-2);max-width:680px;line-height:1.9">研究施設、設備、作業手順、専門知識など、通常は体験しづらい対象を、XRで安全に学べるコンテンツとして設計・制作します。</p>
-
-  <div class="svc-img">IMAGE：教育・産業向けXR</div>
+  <p class="svc-lead">研究施設、設備、作業手順、専門知識など、通常は体験しづらい対象を、XRで安全に学べるコンテンツとして設計・制作します。</p>
 
   <div class="info-cols">
     <div class="info-box">
-      <p class="label">対応する課題</p>
+      <span class="info-label">対応する課題</span>
       <ul>
         <li>施設や設備を実際には体験させられない</li>
         <li>専門知識を安全・直感的に伝えたい</li>
         <li>研究成果・文化資産をアーカイブしたい</li>
       </ul>
     </div>
-    <div class="info-box">
-      <p class="label">往来ができること</p>
+    <div class="info-box solution">
+      <span class="info-label">往来ができること</span>
       <ul>
         <li>施設・設備のVRChatワールド体験化</li>
         <li>専門監修と連携した学習体験制作</li>
@@ -110,21 +110,19 @@
     <span class="svc-num">02</span>
     <h2>自治体・地域文化のXR体験化</h2>
   </div>
-  <p style="color:var(--text-2);max-width:680px;line-height:1.9">自治体や地域が持つ観光資源、歴史、文化、施設の魅力を、バーチャル空間や展示体験として再構成し、伝わる形にします。</p>
-
-  <div class="svc-img">IMAGE：自治体・地域文化XR</div>
+  <p class="svc-lead">自治体や地域が持つ観光資源、歴史、文化、施設の魅力を、バーチャル空間や展示体験として再構成し、伝わる形にします。</p>
 
   <div class="info-cols">
     <div class="info-box">
-      <p class="label">対応する課題</p>
+      <span class="info-label">対応する課題</span>
       <ul>
         <li>地域資源の認知向上と若年層への接点</li>
         <li>観光・文化情報を体験として伝えたい</li>
         <li>デジタルアーカイブと広報を連動させたい</li>
       </ul>
     </div>
-    <div class="info-box">
-      <p class="label">往来ができること</p>
+    <div class="info-box solution">
+      <span class="info-label">往来ができること</span>
       <ul>
         <li>地域・文化資産のVRChatワールド体験化</li>
         <li>地域コラボのアバターファッション制作・配布</li>
@@ -152,21 +150,19 @@
     <span class="svc-num">03</span>
     <h2>VRChat・XRプロモーション</h2>
   </div>
-  <p style="color:var(--text-2);max-width:680px;line-height:1.9">VRChatを中心に、ブランドの世界観やメッセージを体験として届けるプロモーションを企画・制作します。ワールド制作、イベント、コミュニティ施策まで対応します。</p>
-
-  <div class="svc-img">IMAGE：VRChatプロモーション</div>
+  <p class="svc-lead">VRChatを中心に、ブランドの世界観やメッセージを体験として届けるプロモーションを企画・制作します。ワールド制作、イベント、コミュニティ施策まで対応します。</p>
 
   <div class="info-cols">
     <div class="info-box">
-      <p class="label">対応する課題</p>
+      <span class="info-label">対応する課題</span>
       <ul>
         <li>若年層・デジタルネイティブ層への新接点</li>
         <li>ブランドの世界観を体験として届けたい</li>
         <li>VRChatコミュニティへの自然な参加を生みたい</li>
       </ul>
     </div>
-    <div class="info-box">
-      <p class="label">往来ができること</p>
+    <div class="info-box solution">
+      <span class="info-label">往来ができること</span>
       <ul>
         <li>VRChatワールドの企画・制作</li>
         <li>バーチャルイベントの企画・運営</li>
@@ -211,20 +207,18 @@
     <span class="svc-num">04</span>
     <h2>展示・LBE・イベント空間の体験設計</h2>
   </div>
-  <p style="color:var(--text-2);max-width:680px;line-height:1.9">展示会、商業施設、イベント会場などで、人が参加し、理解し、記憶に残る体験空間を設計します。</p>
-
-  <div class="svc-img" style="height:160px">IMAGE：展示・LBE</div>
+  <p class="svc-lead">展示会、商業施設、イベント会場などで、人が参加し、理解し、記憶に残る体験空間を設計します。</p>
 
   <div class="info-cols">
     <div class="info-box">
-      <p class="label">対応する課題</p>
+      <span class="info-label">対応する課題</span>
       <ul>
         <li>展示・イベントで記憶に残る体験を設計したい</li>
         <li>空間体験とデジタルコンテンツを連動させたい</li>
       </ul>
     </div>
-    <div class="info-box">
-      <p class="label">往来ができること</p>
+    <div class="info-box solution">
+      <span class="info-label">往来ができること</span>
       <ul>
         <li>展示コンセプト・体験設計</li>
         <li>XRコンテンツの開発・チューニング</li>
