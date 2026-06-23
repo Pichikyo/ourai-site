@@ -9,11 +9,11 @@
 
 <header>
   <div class="nav">
-    <a class="logo" href="index.html"><img src="https:assets/images/logo.png" alt="往来 OURAI" style="height:34px;display:block"></a>
+    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="往来 OURAI" style="height:34px;display:block" onerror="this.style.display='none';this.parentElement.textContent='往来 OURAI'"></a>
     <nav><ul>
       <li><a href="about.html">ABOUT</a></li>
       <li><a href="service.html">SERVICE</a></li>
-      <li><a href="case.html">CASE</a></li>
+      <li><a href="case.html">WORKS</a></li>
       <li><a class="active" href="news.html">NEWS</a></li>
     </ul></nav>
     <a class="btn-dl" href="#">資料DL</a>
@@ -41,10 +41,11 @@
 
 <div class="cta-foot">
   <span class="sec-label">CONTACT</span>
-  <h2>まずは、お気軽にご連絡を</h2>
-  <div style="display:flex;gap:16px;justify-content:center;margin-top:32px">
-    <a class="btn-solid" style="background:var(--blue)" href="#">資料ダウンロード</a>
+  <h2>まずは、お気軽にご相談ください。</h2>
+  <p style="max-width:520px;margin:16px auto 0;font-size:15px;opacity:.7">VRChat、XR、AI、展示、イベントなど、まだ形になっていない企画段階からご相談いただけます。</p>
+  <div style="display:flex;gap:16px;justify-content:center;margin-top:32px;flex-wrap:wrap">
     <a class="btn-solid" style="background:var(--purple)" href="contact.html">お問い合わせ</a>
+    <a class="btn-solid" style="background:var(--blue)" href="case.html">実績を見る</a>
   </div>
 </div>
 
@@ -52,8 +53,21 @@
 
 <footer>
   <div class="wrap">
-    <div><img src="https:assets/images/logo.png" alt="往来 OURAI" style="height:30px;margin-bottom:16px;filter:invert(1)">株式会社 往来　〒107-0052 東京都港区赤坂9-6-30 ルイマーブル乃木坂408</div>
-    <ul><li><a href="about.html">ABOUT</a></li><li><a href="service.html">SERVICE</a></li><li><a href="case.html">CASE</a></li><li><a href="news.html">NEWS</a></li></ul>
+    <div>
+      <img src="assets/images/logo.png" alt="往来 OURAI" style="height:30px;margin-bottom:12px;filter:invert(1)" onerror="this.style.display='none'">
+      <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0 0 14px;line-height:1.9">
+        XR・AI・リアル空間を横断し、<br>企業や自治体の新しい体験を企画・制作・運営するクリエイティブスタジオです。
+      </p>
+      株式会社 往来　代表取締役社長：東 智美<br>
+      〒107-0052 東京都港区赤坂9-6-30 ルイマーブル乃木坂408
+    </div>
+    <ul>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="service.html">SERVICE</a></li>
+      <li><a href="case.html">WORKS</a></li>
+      <li><a href="news.html">NEWS</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
     <div class="copy">©️ OURAI Co.,Ltd.</div>
   </div>
 </footer>
