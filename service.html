@@ -4,6 +4,26 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SERVICE｜往来 - 事業内容</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* ── Service listing: compact ── */
+.svc-block { padding: 64px 0; }
+.svc-block + .svc-block { border-top: 1px solid var(--line); }
+.svc-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px; }
+.svc-head h2 { font-size: clamp(22px, 2.8vw, 30px); margin: 0; }
+.svc-img { height: 200px; border-radius: 10px; background: linear-gradient(135deg,#dfe3ee,#cfd6e8); display: flex; align-items: center; justify-content: center; color: var(--text-3); font-size: 12px; letter-spacing: .08em; margin: 24px 0; overflow: hidden; }
+.svc-img img { width: 100%; height: 100%; object-fit: cover; }
+.info-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 32px; }
+.info-box { background: var(--bg); border-radius: 8px; padding: 16px 18px; }
+.info-box .label { font-size: 11px; font-weight: 700; color: var(--text-3); letter-spacing: .12em; margin: 0 0 10px; }
+.info-box ul { list-style: none; padding: 0; margin: 0; font-size: 13px; color: var(--text-2); line-height: 2; }
+.works-label { font-size: 11px; font-weight: 700; color: var(--text-3); letter-spacing: .12em; margin: 0 0 14px; }
+.svc-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--blue); margin-top: 24px; }
+.svc-link:hover { opacity: .65; }
+@media (max-width: 600px) {
+  .info-cols { grid-template-columns: 1fr; }
+  .svc-img { height: 140px; }
+}
+</style>
 </head>
 <body>
 
@@ -31,216 +51,206 @@
   </div>
 </div>
 
+<section style="padding:0">
+<div class="wrap">
+
 <!-- 01 教育・産業向けXRコンテンツ -->
-<section id="industrial">
-  <div class="wrap">
+<div class="svc-block" id="industrial">
+  <div class="svc-head">
     <span class="svc-num">01</span>
     <h2>教育・産業向けXRコンテンツ</h2>
-    <p class="lead">研究施設、設備、作業手順、専門知識など、通常は体験しづらい対象を、XRで安全に学べるコンテンツとして設計・制作します。</p>
+  </div>
+  <p style="color:var(--text-2);max-width:680px;line-height:1.9">研究施設、設備、作業手順、専門知識など、通常は体験しづらい対象を、XRで安全に学べるコンテンツとして設計・制作します。</p>
 
-    <div class="hero-img">IMAGE：教育・産業向けXR実績ビジュアル</div>
+  <div class="svc-img">IMAGE：教育・産業向けXR</div>
 
-    <div class="cards" style="grid-template-columns:repeat(2,1fr);margin-top:0">
-      <div class="card" style="padding:28px 26px">
-        <h3 style="margin:0 0 12px;font-size:17px">対応する課題</h3>
-        <ul style="color:var(--text-2);font-size:14px;list-style:none;padding:0;line-height:2.1">
-          <li>・ 施設や設備の内部を実際には体験させられない</li>
-          <li>・ 専門知識をわかりやすく、安全に伝えたい</li>
-          <li>・ 教育・研修のコスト・場所・安全性を改善したい</li>
-          <li>・ 研究成果・文化資産を広くアーカイブしたい</li>
-        </ul>
-      </div>
-      <div class="card" style="padding:28px 26px">
-        <h3 style="margin:0 0 12px;font-size:17px">往来ができること</h3>
-        <ul style="color:var(--text-2);font-size:14px;list-style:none;padding:0;line-height:2.1">
-          <li>・ VRChatワールドとしての施設・設備の体験化</li>
-          <li>・ 専門監修と連携した学習体験コンテンツ制作</li>
-          <li>・ 3Dデータの最適化・プラットフォーム展開</li>
-          <li>・ 企画・制作・運営まで一貫対応</li>
-        </ul>
-      </div>
+  <div class="info-cols">
+    <div class="info-box">
+      <p class="label">対応する課題</p>
+      <ul>
+        <li>施設や設備を実際には体験させられない</li>
+        <li>専門知識を安全・直感的に伝えたい</li>
+        <li>研究成果・文化資産をアーカイブしたい</li>
+      </ul>
     </div>
-
-    <div style="margin-top:48px">
-      <div class="sec-label" style="margin-bottom:20px">関連実績</div>
-      <div class="cards" style="grid-template-columns:repeat(2,1fr)">
-        <a class="card" href="case.html">
-          <div class="thumb">CASE IMAGE</div>
-          <div class="body">
-            <div class="platform" style="border-color:#22a08a">教育XR</div>
-            <h3 style="font-size:15px">高エネルギー加速器研究機構 KEK｜加速器ワールド制作</h3>
-            <p style="font-size:13px;color:var(--text-2);margin:6px 0 10px;line-height:1.7">巨大な研究施設や加速器の仕組みを、VRChat上で体験的に学べる教育用ワールドとして制作。</p>
-            <div class="tags"><span class="tag cat">教育XR</span><span class="tag">VRChat</span><span class="tag">研究施設</span></div>
-          </div>
-        </a>
-        <a class="card" href="feature-kyocera.html">
-          <div class="thumb" style="overflow:hidden"><img src="assets/images/pf_kyocera_fineceramics_202408_01.jpg" alt="京セラ" style="width:100%;height:100%;object-fit:cover"></div>
-          <div class="body">
-            <div class="platform" style="border-color:#22a08a">産業XR</div>
-            <h3 style="font-size:15px">京セラ｜B2B展示・産業XRコンテンツの継続展開</h3>
-            <p style="font-size:13px;color:var(--text-2);margin:6px 0 10px;line-height:1.7">ツールワールド、レーザーワールドなど5案件にわたり産業XRを展開。</p>
-            <div class="tags"><span class="tag cat">産業XR</span><span class="tag">VRChat</span><span class="tag">B2B</span></div>
-          </div>
-        </a>
-      </div>
+    <div class="info-box">
+      <p class="label">往来ができること</p>
+      <ul>
+        <li>施設・設備のVRChatワールド体験化</li>
+        <li>専門監修と連携した学習体験制作</li>
+        <li>3Dデータの最適化・プラットフォーム展開</li>
+      </ul>
     </div>
   </div>
-</section>
+
+  <p class="works-label">RELATED WORKS</p>
+  <div class="cards" style="grid-template-columns:repeat(2,1fr)">
+    <a class="card" href="case.html">
+      <div class="thumb">CASE IMAGE</div>
+      <div class="body">
+        <div class="platform" style="border-color:#22a08a">教育XR</div>
+        <h3 style="font-size:14px">高エネルギー加速器研究機構 KEK｜加速器ワールド制作</h3>
+        <div class="tags"><span class="tag cat">教育XR</span><span class="tag">VRChat</span></div>
+      </div>
+    </a>
+    <a class="card" href="feature-kyocera.html">
+      <div class="thumb" style="overflow:hidden"><img src="assets/images/pf_kyocera_fineceramics_202408_01.jpg" alt="京セラ" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="body">
+        <div class="platform" style="border-color:#22a08a">産業XR</div>
+        <h3 style="font-size:14px">京セラ｜産業XRコンテンツ 5案件継続展開</h3>
+        <div class="tags"><span class="tag cat">産業XR</span><span class="tag">B2B</span></div>
+      </div>
+    </a>
+  </div>
+</div>
 
 <!-- 02 自治体・地域文化のXR体験化 -->
-<section id="cultural" style="background:var(--bg-2)">
-  <div class="wrap">
+<div class="svc-block" id="cultural">
+  <div class="svc-head">
     <span class="svc-num">02</span>
     <h2>自治体・地域文化のXR体験化</h2>
-    <p class="lead">自治体や地域が持つ観光資源、歴史、文化、施設の魅力を、バーチャル空間や展示体験として再構成し、伝わる形にします。</p>
+  </div>
+  <p style="color:var(--text-2);max-width:680px;line-height:1.9">自治体や地域が持つ観光資源、歴史、文化、施設の魅力を、バーチャル空間や展示体験として再構成し、伝わる形にします。</p>
 
-    <div class="hero-img">IMAGE：自治体・地域文化XR実績ビジュアル</div>
+  <div class="svc-img">IMAGE：自治体・地域文化XR</div>
 
-    <div class="cards" style="grid-template-columns:repeat(2,1fr);margin-top:0">
-      <div class="card" style="padding:28px 26px">
-        <h3 style="margin:0 0 12px;font-size:17px">対応する課題</h3>
-        <ul style="color:var(--text-2);font-size:14px;list-style:none;padding:0;line-height:2.1">
-          <li>・ 地域資源の認知度向上と若年層への接点づくり</li>
-          <li>・ 観光・文化情報を体験として伝えたい</li>
-          <li>・ デジタルアーカイブと広報施策を連動させたい</li>
-        </ul>
-      </div>
-      <div class="card" style="padding:28px 26px">
-        <h3 style="margin:0 0 12px;font-size:17px">往来ができること</h3>
-        <ul style="color:var(--text-2);font-size:14px;list-style:none;padding:0;line-height:2.1">
-          <li>・ VRChatワールドとしての地域・文化資産の体験化</li>
-          <li>・ 地域コラボのアバターファッション制作・配布</li>
-          <li>・ コミュニティを巻き込んだPR施策の企画・運営</li>
-          <li>・ 調査・分析・市場レポーティング</li>
-        </ul>
-      </div>
+  <div class="info-cols">
+    <div class="info-box">
+      <p class="label">対応する課題</p>
+      <ul>
+        <li>地域資源の認知向上と若年層への接点</li>
+        <li>観光・文化情報を体験として伝えたい</li>
+        <li>デジタルアーカイブと広報を連動させたい</li>
+      </ul>
     </div>
-
-    <div style="margin-top:48px">
-      <div class="sec-label" style="margin-bottom:20px">関連実績</div>
-      <div class="cards" style="grid-template-columns:repeat(2,1fr)">
-        <a class="card" href="feature-yokosuka.html">
-          <div class="thumb" style="overflow:hidden"><img src="assets/images/slide/pf_yokosuka_2023_10_01.jpg" alt="横須賀市" style="width:100%;height:100%;object-fit:cover"></div>
-          <div class="body">
-            <div class="platform">自治体・地域文化</div>
-            <h3 style="font-size:15px">横須賀市「メタバースヨコスカ」｜スカジャン15万着DL</h3>
-            <p style="font-size:13px;color:var(--text-2);margin:6px 0 10px;line-height:1.7">地域の魅力をVRChat上で体験化した観光プロモーション。2023年〜継続中。</p>
-            <div class="tags"><span class="tag cat">自治体</span><span class="tag">VRChat</span><span class="tag">観光PR</span></div>
-          </div>
-        </a>
-      </div>
+    <div class="info-box">
+      <p class="label">往来ができること</p>
+      <ul>
+        <li>地域・文化資産のVRChatワールド体験化</li>
+        <li>地域コラボのアバターファッション制作・配布</li>
+        <li>コミュニティを巻き込んだPR施策の企画・運営</li>
+      </ul>
     </div>
   </div>
-</section>
+
+  <p class="works-label">RELATED WORKS</p>
+  <div class="cards" style="grid-template-columns:repeat(2,1fr)">
+    <a class="card" href="feature-yokosuka.html">
+      <div class="thumb" style="overflow:hidden"><img src="assets/images/slide/pf_yokosuka_2023_10_01.jpg" alt="横須賀市" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="body">
+        <div class="platform">自治体・地域文化</div>
+        <h3 style="font-size:14px">横須賀市「メタバースヨコスカ」｜スカジャン15万着DL</h3>
+        <div class="tags"><span class="tag cat">自治体</span><span class="tag">VRChat</span><span class="tag">観光PR</span></div>
+      </div>
+    </a>
+  </div>
+</div>
 
 <!-- 03 VRChat・XRプロモーション -->
-<section id="promotion">
-  <div class="wrap">
+<div class="svc-block" id="promotion">
+  <div class="svc-head">
     <span class="svc-num">03</span>
     <h2>VRChat・XRプロモーション</h2>
-    <p class="lead">VRChatを中心に、ブランドの世界観やメッセージを体験として届けるプロモーションを企画・制作します。ワールド制作、イベント、コミュニティ施策まで対応します。</p>
+  </div>
+  <p style="color:var(--text-2);max-width:680px;line-height:1.9">VRChatを中心に、ブランドの世界観やメッセージを体験として届けるプロモーションを企画・制作します。ワールド制作、イベント、コミュニティ施策まで対応します。</p>
 
-    <div class="hero-img">IMAGE：VRChatプロモーション実績ビジュアル</div>
+  <div class="svc-img">IMAGE：VRChatプロモーション</div>
 
-    <div class="cards" style="grid-template-columns:repeat(2,1fr);margin-top:0">
-      <div class="card" style="padding:28px 26px">
-        <h3 style="margin:0 0 12px;font-size:17px">対応する課題</h3>
-        <ul style="color:var(--text-2);font-size:14px;list-style:none;padding:0;line-height:2.1">
-          <li>・ 若年層・デジタルネイティブ層への新しい接点</li>
-          <li>・ ブランドの世界観を体験として届けたい</li>
-          <li>・ VRChatコミュニティへの自然な参加を生みたい</li>
-        </ul>
-      </div>
-      <div class="card" style="padding:28px 26px">
-        <h3 style="margin:0 0 12px;font-size:17px">往来ができること</h3>
-        <ul style="color:var(--text-2);font-size:14px;list-style:none;padding:0;line-height:2.1">
-          <li>・ VRChatワールドの企画・制作</li>
-          <li>・ バーチャルイベントの企画・運営</li>
-          <li>・ コミュニティ施策・インフルエンサー連携</li>
-          <li>・ PR戦略・メディアリレーション</li>
-        </ul>
-      </div>
+  <div class="info-cols">
+    <div class="info-box">
+      <p class="label">対応する課題</p>
+      <ul>
+        <li>若年層・デジタルネイティブ層への新接点</li>
+        <li>ブランドの世界観を体験として届けたい</li>
+        <li>VRChatコミュニティへの自然な参加を生みたい</li>
+      </ul>
     </div>
-
-    <div style="margin-top:48px">
-      <div class="sec-label" style="margin-bottom:20px">関連実績</div>
-      <div class="cards">
-        <a class="card" href="feature-nissan-beams.html">
-          <div class="thumb" style="overflow:hidden"><img src="assets/images/pf_nissan_heritageworld_202403_01.jpg" alt="日産×BEAMS" style="width:100%;height:100%;object-fit:cover"></div>
-          <div class="body">
-            <div class="platform">ブランド体験</div>
-            <h3 style="font-size:15px">日産自動車 × BEAMS｜VRChatコラボレーション企画</h3>
-            <div class="tags"><span class="tag cat">VRChatプロモーション</span><span class="tag">ブランド</span><span class="tag">イベント</span></div>
-          </div>
-        </a>
-        <a class="card" href="feature-mos.html">
-          <div class="thumb" style="overflow:hidden"><img src="assets/images/slide/2304_p_img_mos_okada_image01.jpg" alt="モスバーガー" style="width:100%;height:100%;object-fit:cover"></div>
-          <div class="body">
-            <div class="platform">ブランド体験</div>
-            <h3 style="font-size:15px">モスバーガー「MOS BURGER ON THE MOON」</h3>
-            <div class="tags"><span class="tag cat">VRChatプロモーション</span><span class="tag">体験設計</span></div>
-          </div>
-        </a>
-        <a class="card" href="feature-pico.html">
-          <div class="thumb">CASE IMAGE</div>
-          <div class="body">
-            <div class="platform">ブランド体験</div>
-            <h3 style="font-size:15px">PICO Carnival｜VR業界から選ばれたブランド体験</h3>
-            <div class="tags"><span class="tag cat">VRChatプロモーション</span><span class="tag">イベント</span></div>
-          </div>
-        </a>
-      </div>
+    <div class="info-box">
+      <p class="label">往来ができること</p>
+      <ul>
+        <li>VRChatワールドの企画・制作</li>
+        <li>バーチャルイベントの企画・運営</li>
+        <li>コミュニティ施策・インフルエンサー連携</li>
+        <li>PR戦略・メディアリレーション</li>
+      </ul>
     </div>
   </div>
-</section>
+
+  <p class="works-label">RELATED WORKS</p>
+  <div class="cards">
+    <a class="card" href="feature-nissan-beams.html">
+      <div class="thumb" style="overflow:hidden"><img src="assets/images/pf_nissan_heritageworld_202403_01.jpg" alt="日産×BEAMS" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="body">
+        <div class="platform">ブランド体験</div>
+        <h3 style="font-size:14px">日産自動車 × BEAMS｜VRChatコラボ 4年継続</h3>
+        <div class="tags"><span class="tag cat">VRChatプロモーション</span><span class="tag">ブランド</span></div>
+      </div>
+    </a>
+    <a class="card" href="feature-mos.html">
+      <div class="thumb" style="overflow:hidden"><img src="assets/images/slide/2304_p_img_mos_okada_image01.jpg" alt="モスバーガー" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="body">
+        <div class="platform">ブランド体験</div>
+        <h3 style="font-size:14px">モスバーガー「MOS BURGER ON THE MOON」</h3>
+        <div class="tags"><span class="tag cat">VRChatプロモーション</span><span class="tag">体験設計</span></div>
+      </div>
+    </a>
+    <a class="card" href="feature-pico.html">
+      <div class="thumb">CASE IMAGE</div>
+      <div class="body">
+        <div class="platform">ブランド体験</div>
+        <h3 style="font-size:14px">PICO Carnival｜VR業界から選ばれたブランド体験</h3>
+        <div class="tags"><span class="tag cat">VRChatプロモーション</span><span class="tag">イベント</span></div>
+      </div>
+    </a>
+  </div>
+</div>
 
 <!-- 04 展示・LBE・イベント空間の体験設計 -->
-<section id="immersive" style="background:var(--bg-2)">
-  <div class="wrap">
+<div class="svc-block" id="immersive">
+  <div class="svc-head">
     <span class="svc-num">04</span>
     <h2>展示・LBE・イベント空間の体験設計</h2>
-    <p class="lead">展示会、商業施設、イベント会場などで、人が参加し、理解し、記憶に残る体験空間を設計します。</p>
+  </div>
+  <p style="color:var(--text-2);max-width:680px;line-height:1.9">展示会、商業施設、イベント会場などで、人が参加し、理解し、記憶に残る体験空間を設計します。</p>
 
-    <div class="hero-img">IMAGE：展示・LBE実績ビジュアル</div>
+  <div class="svc-img" style="height:160px">IMAGE：展示・LBE</div>
 
-    <div class="cards" style="grid-template-columns:repeat(2,1fr);margin-top:0">
-      <div class="card" style="padding:28px 26px">
-        <h3 style="margin:0 0 12px;font-size:17px">対応する課題</h3>
-        <ul style="color:var(--text-2);font-size:14px;list-style:none;padding:0;line-height:2.1">
-          <li>・ 展示やイベントで記憶に残る体験を設計したい</li>
-          <li>・ 来場者の参加・理解・定着を促したい</li>
-          <li>・ 空間体験とデジタルコンテンツを連動させたい</li>
-        </ul>
-      </div>
-      <div class="card" style="padding:28px 26px">
-        <h3 style="margin:0 0 12px;font-size:17px">往来ができること</h3>
-        <ul style="color:var(--text-2);font-size:14px;list-style:none;padding:0;line-height:2.1">
-          <li>・ 展示コンセプト・体験設計</li>
-          <li>・ XRコンテンツの開発・チューニング</li>
-          <li>・ 現場オペレーション・運用設計</li>
-          <li>・ 集客・プロモーション連動</li>
-        </ul>
-      </div>
+  <div class="info-cols">
+    <div class="info-box">
+      <p class="label">対応する課題</p>
+      <ul>
+        <li>展示・イベントで記憶に残る体験を設計したい</li>
+        <li>空間体験とデジタルコンテンツを連動させたい</li>
+      </ul>
     </div>
-
-    <div style="margin-top:48px">
-      <div class="sec-label" style="margin-bottom:20px">関連実績</div>
-      <div class="cards" style="grid-template-columns:repeat(2,1fr)">
-        <a class="card" href="feature-futureshop.html">
-          <div class="thumb" style="overflow:hidden"><img src="assets/images/slide/pf_future20th_squar_01.jpg" alt="フューチャーショップ" style="width:100%;height:100%;object-fit:cover"></div>
-          <div class="body">
-            <div class="platform">展示・LBE</div>
-            <h3 style="font-size:15px">フューチャーショップ「FUTURE 20th SQUAR」</h3>
-            <div class="tags"><span class="tag cat">展示・LBE</span><span class="tag">VRChat</span><span class="tag">イベント</span></div>
-          </div>
-        </a>
-      </div>
+    <div class="info-box">
+      <p class="label">往来ができること</p>
+      <ul>
+        <li>展示コンセプト・体験設計</li>
+        <li>XRコンテンツの開発・チューニング</li>
+        <li>現場オペレーション・運用設計</li>
+      </ul>
     </div>
   </div>
+
+  <p class="works-label">RELATED WORKS</p>
+  <div class="cards" style="grid-template-columns:repeat(2,1fr)">
+    <a class="card" href="feature-futureshop.html">
+      <div class="thumb" style="overflow:hidden"><img src="assets/images/slide/pf_future20th_squar_01.jpg" alt="フューチャーショップ" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="body">
+        <div class="platform">展示・LBE</div>
+        <h3 style="font-size:14px">フューチャーショップ「FUTURE 20th SQUAR」</h3>
+        <div class="tags"><span class="tag cat">展示・LBE</span><span class="tag">VRChat</span></div>
+      </div>
+    </a>
+  </div>
+</div>
+
+</div>
 </section>
 
 <!-- VRChat Official Partner -->
-<section style="background:var(--white)">
+<section style="background:var(--bg-2)">
   <div class="wrap">
     <div style="padding:36px;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 100%);border-radius:16px;color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
       <div>
