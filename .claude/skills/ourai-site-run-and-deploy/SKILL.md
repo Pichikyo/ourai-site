@@ -26,24 +26,38 @@ python3 -m http.server 8742
 
 ---
 
-## 2. Cloudflare Pagesへデプロイする
+## 2. 本番デプロイは GitHub Actions（CI）経由が正（2026-07-12更新）
+
+**`main`ブランチへの `git push` がそのまま本番デプロイになる。** `.github/workflows/deploy.yml` が疎通済み（2026-07-12昼確認・実装済み）で、push時に自動で `wrangler pages deploy` が実行される。手動で`wrangler`コマンドを叩く運用は**もう正ではない**（このスキルの旧版は手動wrangler前提で書かれていたが、その記述が古かった）。
+
+```bash
+cd /Users/pichikyo/dev/ourai-site
+git add -A
+git commit -m "..."
+git push origin main   # ← これで本番デプロイが走る（CI経由）
+```
+
+| 項目 | 値 |
+|---|---|
+| デプロイ方式 | GitHub Actions（`.github/workflows/deploy.yml`）経由。`push`（main）で本番デプロイ、`pull_request`はプレビューURLをPRにコメント |
+| デプロイ先 | Cloudflare Pages |
+| プロジェクト名 | `ourai-site` |
+| 本番URL | https://ourai-site.pages.dev （固定） |
+| デプロイ対象ディレクトリ | `.`（リポジトリ直下、CI実行時も同様）＝**このフォルダの中身がそのまま丸ごとアップロードされる**（3章のチェックリストはCI経由でもそのまま有効） |
+| CI内の`--commit-dirty=true` | CI実行環境上の未コミット差分（チェックアウト直後は無いはずだが）があってもデプロイを続行する指定 |
+
+進捗確認: `gh run list --workflow=deploy.yml` / `gh run view <run-id>`（GitHub CLI）で見られる。
+
+**例外（CIが落ちている時の緊急対応など）**に限り、従来どおり手動デプロイも使える。
 
 ```bash
 cd /Users/pichikyo/dev/ourai-site
 npx wrangler pages deploy . --project-name ourai-site --commit-dirty=true
 ```
 
-| 項目 | 値 |
-|---|---|
-| デプロイ先 | Cloudflare Pages |
-| プロジェクト名 | `ourai-site` |
-| 本番URL | https://ourai-site.pages.dev （固定・pushのたびに最新化） |
-| `--commit-dirty=true` の意味 | gitに未コミットの変更（作業中のファイル）があってもデプロイを続行する指定 |
-| デプロイ対象ディレクトリ | `.`（カレントディレクトリ＝リポジトリ直下）＝**このフォルダの中身がそのまま丸ごとアップロードされる** |
-
-確認済み: 2026-07-07時点で `git status` はこのリポジトリで未コミット変更あり（about.html/works.html（旧works.html・2026/07/11改名）/style.css等）＋未追跡ファイル（CLAUDE.md, design.md, budget.html, company-record.html, feature-kek.html, llms.txt, `.hallmark/`）が多数ある状態。`--commit-dirty=true` を付けないとwranglerが警告で止まる可能性があるため、このコマンド形は変えないこと。
-
 カスタムドメインへの移行予定は**未確認**（CLAUDE.md・design.mdに記載なし）。当面は `ourai-site.pages.dev` が本番URL。
+
+**案件間の注意**: この「push=デプロイ」運用は**往来（ourai-site）限定**。グループ会社トーモ（toomo-site）はGit連携なしの `deploy.sh` 手動実行が正（`~/dev/toomo-site/.claude/skills/toomo-site-run-and-deploy/SKILL.md`参照）。他案件の手順書を読むときは決め打ちしないこと。
 
 ---
 
