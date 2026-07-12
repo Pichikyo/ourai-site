@@ -133,3 +133,8 @@ grep -rl "gtag\|googletagmanager\|G-[A-Z0-9]" /Users/pichikyo/dev/ourai-site/*.h
 # contact.htmlの送信先確認
 grep -n "action=" /Users/pichikyo/dev/ourai-site/contact.html
 ```
+
+## 直push許可の例外（2026-07-12 智美決定・A案）
+
+**智美がチャットで内容を一つずつ指示・確認した変更の反映**（例: 実績台帳→works.mdの同期）は、PR（承認箱）を通さず main へ直push＋デプロイしてよい。会話そのものが承認にあたるため。
+それ以外の変更（デザイン・構成・新ページ・文言の独自判断を含むもの）は従来どおりPR経由で智美の承認を得る。
