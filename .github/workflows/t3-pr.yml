@@ -1,0 +1,13 @@
+name: t3-pr
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ok
