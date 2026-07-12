@@ -175,18 +175,25 @@ pf_[クライアント名]_[年月または連番]_[連番].jpg
 
 ---
 
-## 3. お知らせを追加する（news.html）
+## 3. お知らせを追加する（ニュース台帳経由・2026/07/12から台帳駆動化）
 
-`news.html` は年表形式で、`.news-item`を新しい順に積んでいくだけのシンプルな構造です（出典表記は必須ではありません。これはcompany-record.htmlとの明確な違いです）。
+**news.htmlを直接編集してはいけない。** ニュースの正本は `~/inhouse-bot/ourai-news-ledger.json`（N番号つき台帳）で、news.htmlの一覧・index.htmlの最新3件・works.md末尾のお知らせ節は、すべて `~/inhouse-bot/ourai_sync.py` が `<!-- NEWS-SYNC:START/END -->` マーカー間に生成する。手で書いた変更は次のsyncで消える。
 
-```html
-<div class="news-item"><time>2026.07</time><span class="chip">お知らせ</span><span>本文</span></div>
-```
+**追加手順**:
+1. 台帳の `news` 配列末尾に1件追加。`no` は既存最大の次（N036〜）、既存noの再利用禁止
+   ```json
+   {"no": "N036", "date": "2026.07", "category": "お知らせ", "text": "本文", "link": "feature-xxx.html", "show": true}
+   ```
+2. `cd ~/inhouse-bot && python3 ourai_sync.py`（news.html/index.html/works.mdの3面が自動更新）
+3. `python3 generate_html.py`（社内閲覧ページ https://inhouse-tasks.pages.dev/ourai-news へ台帳を同梱デプロイ）
+4. ourai-siteを `git commit → push`（CIで本番デプロイ）
 
-- 特集ページや実績にリンクする場合は`<span>`の代わりに`<a href="feature-xxx.html">本文</a>`を使う（2026-07-07実測で多数実例）。
-- `<time>`の書式は `YYYY.MM`（月単位）が基本。年のみの場合は`2023`のような表記も実例あり（厳密なISO日付ではない）。
-- `chip`の値は自由文字列（「お知らせ」「業界活動」「イベント」「3D制作」「ワールド制作」「執筆・登壇」「その他」など2026-07-07時点の実例あり）。厳密なenumではないが、既存の表記に揃えるのが無難です。
-- 新しい項目は一覧の**先頭**（最新の日付の直後）に追加します。
+**フィールドの規律**:
+- `date`: `YYYY.MM` 基本、年のみ `YYYY` 可、年月不明は `date:""`＋`date_label:"—"`。形式外はsyncが警告
+- `category`: `お知らせ/業界活動/イベント/3D制作/ワールド制作/執筆・登壇/その他` の7種に固定（語彙外はsyncが警告）
+- `link`: 省略可。相対（feature-*.html等）またはhttp(s)絶対URLのみ（他はsyncが拒否してリンクなし化）
+- `show: false` で公開3面から非表示（台帳からは消さない）。出典表記は必須ではない（company-record.htmlとの違い）
+- 並びはsyncが日付降順に自動整列するので、台帳内の位置は末尾追加でよい
 
 ---
 
