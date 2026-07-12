@@ -2,34 +2,53 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CONTACT｜往来 - お問い合わせ</title>
+<title>無料相談・お問い合わせ｜株式会社往来</title>
+<meta name="description" content="往来への無料相談・お問い合わせ。VRChat、XR、AI、展示、イベントなど、企画前の情報収集の段階からご相談いただけます。通常2営業日以内にご返信します。">
+<meta property="og:site_name" content="株式会社往来">
+<meta property="og:type" content="website">
+<meta property="og:title" content="無料相談・お問い合わせ｜株式会社往来">
+<meta property="og:description" content="往来への無料相談・お問い合わせ。VRChat、XR、AI、展示、イベントなど、企画前の情報収集の段階からご相談いただけます。通常2営業日以内にご返信します。">
+<meta property="og:url" content="https://ourai-site.pages.dev/contact.html">
+<meta property="og:image" content="https://ourai-site.pages.dev/assets/images/slide/pf_yokosuka_2023_10_01.jpg">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
 <link rel="stylesheet" href="style.css">
 <style>
-.form{max-width:640px;background:var(--white);border-radius:14px;padding:48px 44px;margin-top:8px}
+.form{max-width:640px;background:var(--white);border-radius:var(--radius-card);padding:48px 44px;margin-top:8px}
 .form label{display:block;font-size:13px;font-weight:700;margin:26px 0 8px}
-.form label .req{color:var(--purple);font-size:11px;margin-left:8px}
-.form input,.form select,.form textarea{width:100%;font-family:var(--font);font-size:15px;padding:13px 16px;border:1px solid var(--line);border-radius:8px;background:var(--bg-2);transition:border-color .2s}
-.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.form label .req{color:var(--color-accent);font-size:var(--text-xs);margin-left:8px;font-family:var(--font-body)}
+.form input,.form select,.form textarea{width:100%;font-family:var(--font-body);font-size:var(--text-base);padding:13px 16px;border:1px solid var(--color-rule);border-radius:var(--radius-input);background:var(--color-paper-2);transition:border-color var(--dur-short) var(--ease-out)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--color-focus);outline-offset:2px;border-color:var(--color-accent);background:var(--color-white)}
 .form textarea{min-height:160px;resize:vertical}
-.form button{margin-top:36px;width:100%;background:linear-gradient(120deg,var(--blue),var(--purple));color:#fff;font-family:var(--font);font-weight:700;font-size:16px;border:none;border-radius:99px;padding:18px;cursor:pointer;transition:opacity .2s}
-.form button:hover{opacity:.85}
-.form .note{font-size:12px;color:var(--text-3);margin-top:16px;text-align:center}
+.form button{margin-top:var(--space-lg);width:100%;background:var(--color-ink);color:var(--color-accent-ink);font-family:var(--font-body);font-weight:700;font-size:var(--text-base);border:none;border-radius:var(--radius-btn);padding:16px;cursor:pointer;transition:opacity var(--dur-short) var(--ease-out)}
+.form button:hover{opacity:.8}
+.form .note{font-size:var(--text-xs);color:var(--color-ink-3);margin-top:var(--space-md);text-align:center;font-family:var(--font-body)}
 </style>
 </head>
 <body>
 
 <header>
   <div class="nav">
-    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="往来 OURAI" style="height:34px;display:block" onerror="this.style.display='none';this.parentElement.textContent='往来 OURAI'"></a>
+    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="往来 OURAI" style="display:block" onerror="this.style.display='none';this.parentElement.textContent='往来 OURAI'"></a>
     <nav><ul>
-      <li><a href="about.html">ABOUT</a></li>
-      <li><a href="service.html">SERVICE</a></li>
-      <li><a href="case.html">WORKS</a></li>
-      <li><a href="news.html">NEWS</a></li>
+      <li><a href="about.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.4-3.4 3.9-5 7-5s5.6 1.6 7 5"/></svg>ABOUT</a></li>
+      <li><a href="service.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 14.5l9 5 9-5"/></svg>SERVICE</a></li>
+      <li><a href="works.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>WORKS</a></li>
+      <li><a href="budget.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 4l4.5 6.5L16.5 4M12 10.5V20M8.5 13.5h7M8.5 16.5h7"/></svg>BUDGET</a></li>
+      <li><a href="news.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M8 9.5h8M8 13h8M8 16.5h5"/></svg>NEWS</a></li>
     </ul></nav>
-    <a class="btn-dl" href="#">資料DL</a>
-    <a class="btn-mail" href="contact.html">✉</a>
+    <a class="btn-dl" href="contact.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 3V11.5A7.5 7.5 0 0 1 10.5 4h3A7.5 7.5 0 0 1 21 11.5z"/></svg>無料相談</a>
+    <button class="hamburger" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="about.html">ABOUT</a>
+    <a href="service.html">SERVICE</a>
+    <a href="works.html">WORKS</a>
+    <a href="budget.html">BUDGET</a>
+    <a href="news.html">NEWS</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
 </header>
 
 <main>
@@ -37,27 +56,60 @@
 <div class="page-hero">
   <div class="wrap">
     <div class="sec-label">CONTACT</div>
-    <h1 class="page-title">お問い合わせ</h1>
-    <p class="lead">XR、VRChat、AI、展示、イベントなど、まだ形になっていない企画段階からご相談いただけます。通常2営業日以内にご返信いたします。</p>
+    <h1 class="page-title">無料相談・お問い合わせ</h1>
+    <p class="lead"><span class="wb">初回のご相談は無料です。</span><span class="wb">「まだ企画になっていない」</span><span class="wb">段階から、</span><span class="wb">お気軽にお問い合わせください。</span><span class="wb">通常2営業日以内に</span><span class="wb">ご返信いたします。</span></p>
+    <div style="margin-top:var(--space-xl);padding:32px 36px;background:var(--color-white);border-radius:var(--radius-card)">
+      <p style="margin:0 0 20px;font-size:var(--text-xs);color:var(--color-ink-3);letter-spacing:var(--track-label);text-align:center">まずは無料の30分ヒアリングで、いま困っていることをそのままお話しください。</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center">
+        <a class="btn-solid" style="padding-left:var(--space-md);padding-right:var(--space-md)" href="#contact-form">フォームから問い合わせる</a>
+        <a class="btn-solid" style="background:transparent;color:var(--color-ink);border:1.5px solid var(--color-ink);padding-left:var(--space-md);padding-right:var(--space-md)" href="https://calendar.app.google/FAo6q2G3pFZXLnFeA" target="_blank" rel="noopener">無料30分ヒアリングを予約する</a>
+        <a class="btn-solid" style="background:#06C755;color:#fff;padding-left:var(--space-md);padding-right:var(--space-md)" href="https://line.me/R/ti/p/@505kfnca" target="_blank" rel="noopener">LINEで気軽に相談する</a>
+      </div>
+    </div>
   </div>
 </div>
 
 <section style="padding-top:56px">
   <div class="wrap">
-    <!-- 公開時：Formspreeでフォーム作成し action のIDを差し替える -->
-    <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <div class="sec-label">FLOW</div>
+    <h2 style="margin-bottom:var(--space-xl)">ご相談の流れ</h2>
+    <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:16px;margin-bottom:var(--space-3xl)" class="sub-grid">
+      <div class="card" style="padding:32px 28px;border:1px solid var(--color-rule)">
+        <span class="svc-num">01</span>
+        <h3 style="font-size:var(--text-md);margin:10px 0 8px">お問い合わせ</h3>
+        <p style="font-size:var(--text-sm);color:var(--color-ink-2)">フォーム・ヒアリング予約・LINEいずれも、2営業日以内にご返信。</p>
+      </div>
+      <div class="card" style="padding:32px 28px;border:1px solid var(--color-rule)">
+        <span class="svc-num">02</span>
+        <h3 style="font-size:var(--text-md);margin:10px 0 8px">ヒアリング</h3>
+        <p style="font-size:var(--text-sm);color:var(--color-ink-2)">オンラインで30分。話がまとまっていなくても大丈夫です。ここまで無料。</p>
+      </div>
+      <div class="card" style="padding:32px 28px;border:1px solid var(--color-rule)">
+        <span class="svc-num">03</span>
+        <h3 style="font-size:var(--text-md);margin:10px 0 8px">ご提案</h3>
+        <p style="font-size:var(--text-sm);color:var(--color-ink-2)">目的に合わせた企画とお見積もりをご提示します</p>
+      </div>
+      <div class="card" style="padding:32px 28px;border:1px solid var(--color-rule)">
+        <span class="svc-num">04</span>
+        <h3 style="font-size:var(--text-md);margin:10px 0 8px">制作・運営</h3>
+        <p style="font-size:var(--text-sm);color:var(--color-ink-2)">企画から公開・運営まで一気通貫で伴走します</p>
+      </div>
+    </div>
+
+    <form class="form" id="contact-form" action="https://ssgform.com/s/MrgYkzC4z61d" method="POST">
 
       <label>会社名・団体名<span class="req">必須</span></label>
-      <input type="text" name="company" required placeholder="株式会社〇〇">
+      <input type="text" name="会社名" required placeholder="株式会社〇〇">
 
       <label>お名前<span class="req">必須</span></label>
-      <input type="text" name="name" required placeholder="姓 名">
+      <input type="text" name="お名前" required placeholder="姓 名">
 
       <label>メールアドレス<span class="req">必須</span></label>
-      <input type="email" name="email" required placeholder="you@example.com">
+      <input type="email" name="メールアドレス" required placeholder="you@example.com">
 
       <label>ご相談内容</label>
-      <select name="category">
+      <select name="ご相談カテゴリ">
+        <option>情報収集・まずは話を聞きたい</option>
         <option>教育・産業向けXRコンテンツ制作</option>
         <option>自治体・地域文化のXR体験化</option>
         <option>VRChat・XRプロモーション</option>
@@ -66,11 +118,38 @@
       </select>
 
       <label>お問い合わせ内容<span class="req">必須</span></label>
-      <textarea name="message" required placeholder="ご相談の概要、ご予算感、希望時期などをお書きください"></textarea>
+      <textarea name="ご相談内容" required placeholder="ご相談の概要、ご予算感、希望時期などをお書きください"></textarea>
 
       <button type="submit">送信する</button>
       <p class="note">いただいた情報はお問い合わせ対応の目的にのみ使用します。</p>
     </form>
+
+    <div style="max-width:640px;margin:var(--space-3xl) 0 0">
+      <div class="sec-label">FAQ</div>
+      <h2 style="margin-bottom:var(--space-lg)">よくあるご質問</h2>
+      <div>
+        <div style="padding:var(--space-md) 0;border-top:1px solid var(--color-rule)">
+          <p style="font-weight:700;margin:0 0 8px">Q. 予算はどのくらいかかりますか？</p>
+          <p style="font-size:var(--text-sm);color:var(--color-ink-2);margin:0">A. 内容と規模により幅がありますが、100万〜3,000万円のレンジが中心で、最も多いのは300万〜500万円です。ご予算に合わせた企画の組み方からご提案できますので、まずは無料相談でお聞かせください。詳しくは<a href="budget.html">予算感</a>をご覧ください。</p>
+        </div>
+        <div style="padding:var(--space-md) 0;border-top:1px solid var(--color-rule)">
+          <p style="font-weight:700;margin:0 0 8px">Q. XRやVRChatの知識がなくても相談できますか？</p>
+          <p style="font-size:var(--text-sm);color:var(--color-ink-2);margin:0">A. はい。ほとんどのお客様が初めての取り組みです。目的の整理からご一緒します。</p>
+        </div>
+        <div style="padding:var(--space-md) 0;border-top:1px solid var(--color-rule)">
+          <p style="font-weight:700;margin:0 0 8px">Q. 企画がまだ固まっていなくても大丈夫ですか？</p>
+          <p style="font-size:var(--text-sm);color:var(--color-ink-2);margin:0">A. はい。「何ができるか知りたい」という情報収集の段階からご相談いただけます。</p>
+        </div>
+        <div style="padding:var(--space-md) 0;border-top:1px solid var(--color-rule)">
+          <p style="font-weight:700;margin:0 0 8px">Q. 進行スケジュールはどのくらいですか？</p>
+          <p style="font-size:var(--text-sm);color:var(--color-ink-2);margin:0">A. 標準的なワールド制作とプロモーションの場合、企画から公開まで5〜7ヶ月が目安です。制作そのものはおおむね3ヶ月、内容によっては1ヶ月未満の短期対応も可能です。イベントや公開日程が決まっている場合は、逆算してご提案します。</p>
+        </div>
+        <div style="padding:var(--space-md) 0;border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)">
+          <p style="font-weight:700;margin:0 0 8px">Q. VRChat以外にも対応していますか？</p>
+          <p style="font-size:var(--text-sm);color:var(--color-ink-2);margin:0">A. はい。目的に応じて、XR・AI・リアル空間を含む最適な手段をご提案します。万が一、往来では最適な形にできない内容だった場合も、信頼できる最適なプロダクションをご紹介します。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -79,15 +158,16 @@
 <footer>
   <div class="wrap">
     <div>
-      <img src="assets/images/logo.png" alt="往来 OURAI" style="height:30px;margin-bottom:12px;filter:invert(1)" onerror="this.style.display='none'">
-      <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0 0 14px;line-height:1.9">
-        XR・AI・リアル空間を横断し、<br>企業や自治体の新しい体験を企画・制作・運営するクリエイティブスタジオです。
+      <img src="assets/images/logo.png" alt="往来 OURAI" style="height:38px;margin-bottom:14px" onerror="this.style.display='none'">
+      <p style="font-size:13px;color:var(--color-ink-2);margin:0 0 14px;line-height:1.9">
+        XR・AI・リアル空間を横断し、<br class="br-pc">企業や自治体の新しい体験を企画・制作・運営するクリエイティブスタジオです。
       </p>
     </div>
     <ul>
       <li><a href="about.html">ABOUT</a></li>
       <li><a href="service.html">SERVICE</a></li>
-      <li><a href="case.html">WORKS</a></li>
+      <li><a href="works.html">WORKS</a></li>
+      <li><a href="budget.html">BUDGET</a></li>
       <li><a href="news.html">NEWS</a></li>
       <li><a href="contact.html">CONTACT</a></li>
     </ul>
@@ -95,5 +175,27 @@
   </div>
 </footer>
 
+<script>
+/* ── ハンバーガーメニュー ── */
+(function(){
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  if (!menuBtn || !mobileNav) return;
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+    });
+  });
+})();
+</script>
+
+<a class="to-top" href="#" aria-label="ページの先頭へ戻る">↑ TOP</a>
 </body>
 </html>

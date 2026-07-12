@@ -2,23 +2,42 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABOUT｜往来 - 往来について</title>
+<title>往来について｜株式会社往来</title>
+<meta name="description" content="株式会社往来の会社情報。仮想と現実を往来する体験設計スタジオとして、XR・VRChat・AIを横断し、企業・自治体の新しい挑戦を支援します。国内3社目のVRChat公式パートナー。">
+<meta property="og:site_name" content="株式会社往来">
+<meta property="og:type" content="website">
+<meta property="og:title" content="往来について｜株式会社往来">
+<meta property="og:description" content="株式会社往来の会社情報。仮想と現実を往来する体験設計スタジオとして、XR・VRChat・AIを横断し、企業・自治体の新しい挑戦を支援します。国内3社目のVRChat公式パートナー。">
+<meta property="og:url" content="https://ourai-site.pages.dev/about.html">
+<meta property="og:image" content="https://ourai-site.pages.dev/assets/images/slide/pf_yokosuka_2023_10_01.jpg">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <div class="nav">
-    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="往来 OURAI" style="height:34px;display:block" onerror="this.style.display='none';this.parentElement.textContent='往来 OURAI'"></a>
+    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="往来 OURAI" style="display:block" onerror="this.style.display='none';this.parentElement.textContent='往来 OURAI'"></a>
     <nav><ul>
-      <li><a class="active" href="about.html">ABOUT</a></li>
-      <li><a href="service.html">SERVICE</a></li>
-      <li><a href="case.html">WORKS</a></li>
-      <li><a href="news.html">NEWS</a></li>
+      <li><a class="active" href="about.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.4-3.4 3.9-5 7-5s5.6 1.6 7 5"/></svg>ABOUT</a></li>
+      <li><a href="service.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 14.5l9 5 9-5"/></svg>SERVICE</a></li>
+      <li><a href="works.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>WORKS</a></li>
+      <li><a href="budget.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 4l4.5 6.5L16.5 4M12 10.5V20M8.5 13.5h7M8.5 16.5h7"/></svg>BUDGET</a></li>
+      <li><a href="news.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M8 9.5h8M8 13h8M8 16.5h5"/></svg>NEWS</a></li>
     </ul></nav>
-    <a class="btn-dl" href="#">資料DL</a>
-    <a class="btn-mail" href="contact.html">✉</a>
+    <a class="btn-dl" href="contact.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 3V11.5A7.5 7.5 0 0 1 10.5 4h3A7.5 7.5 0 0 1 21 11.5z"/></svg>無料相談</a>
+    <button class="hamburger" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="about.html">ABOUT</a>
+    <a href="service.html">SERVICE</a>
+    <a href="works.html">WORKS</a>
+    <a href="budget.html">BUDGET</a>
+    <a href="news.html">NEWS</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
 </header>
 
 <main>
@@ -30,12 +49,22 @@
   </div>
 </div>
 
-<!-- 1. ABOUT OURAI -->
-<section style="background:var(--white)">
-  <div class="wrap" style="max-width:800px">
-    <div class="sec-label">ABOUT OURAI</div>
-    <h2 style="font-size:clamp(24px,3.4vw,34px);line-height:1.45;margin-bottom:28px">新しい挑戦を、体験として実現する。</h2>
-    <p class="lead">仮想と現実を、往来する。それが私たち「往来」の原点です。<br><br>企業や自治体の新しい取り組みを、XR・VRChat・AI・リアルイベントを横断しながら、人が参加し、理解し、記憶に残る体験として実装する会社です。<br><br>専門的で伝わりにくい情報や、現地で体験しづらい対象も、目的に合わせて設計し、企画・制作・運営まで一貫して形にします。</p>
+<!-- 1. ABOUT OURAI (WhO CONCEPT 参照レイアウト) -->
+<section class="concept-section" style="background:var(--white)">
+  <div class="concept-wrap">
+    <div class="sec-label concept-label">ABOUT OURAI</div>
+    <div class="concept">
+      <div class="concept__media">
+        <!-- 仮当て画像（差し替え予定） -->
+        <img src="assets/images/pf_nissan_heritageworld_202403_01.jpg" alt="往来が制作したバーチャル空間">
+      </div>
+      <div class="concept__body">
+        <h2 style="font-size:var(--text-xl);line-height:1.5;margin-bottom:var(--space-md)">新しい挑戦を、<br class="br-pc">体験として実現する。</h2>
+        <p>仮想と現実を、往来する。<br class="br-pc">それが私たち「往来」の原点です。</p>
+        <p>企業や自治体の新しい取り組みを、<br class="br-pc">XR・VRChat・AI・リアルイベントを横断しながら、<br class="br-pc">人が参加し、理解し、記憶に残る体験として実装する会社です。</p>
+        <p>専門的で伝わりにくい情報や、現地で体験しづらい対象も、<br class="br-pc">目的に合わせて設計し、企画・制作・運営まで一貫して形にします。</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -47,42 +76,38 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px" class="sub-grid">
       <div class="card" style="padding:40px 36px">
         <span class="svc-num">01</span>
-        <h3 style="font-size:20px;margin:10px 0 14px">新しい技術を、最初の成功体験へ導く</h3>
-        <p style="font-size:14px;color:var(--text-2)">前例の少ない企画でも、目的に合わせて設計し、専門的で伝わりにくい情報を、参加して理解できる体験へ落とし込みます。</p>
+        <h3 style="font-size:20px;margin:10px 0 14px">コミュニティに届く体験設計</h3>
+        <p style="font-size:14px;color:var(--text-2)">VRChatをはじめとするバーチャル空間の文化やユーザー行動を深く理解し、企業や自治体の企画を、コミュニティに自然に受け入れられる体験へ変換します。</p>
       </div>
       <div class="card" style="padding:40px 36px">
         <span class="svc-num">02</span>
-        <h3 style="font-size:20px;margin:10px 0 14px">企画・制作・運営まで一気通貫</h3>
-        <p style="font-size:14px;color:var(--text-2)">アイデア段階から、体験設計、制作、当日の運営まで、プロジェクト全体を見通して進行します。</p>
+        <h3 style="font-size:20px;margin:10px 0 14px">新しい技術を、最初の成功体験へ</h3>
+        <p style="font-size:14px;color:var(--text-2)">前例の少ない企画でも、目的から逆算して体験を設計し、専門的で伝わりにくい情報を、誰もが参加して理解できる「最初の成功体験」へ落とし込みます。</p>
       </div>
       <div class="card" style="padding:40px 36px">
         <span class="svc-num">03</span>
-        <h3 style="font-size:20px;margin:10px 0 14px">コミュニティに届く体験設計</h3>
-        <p style="font-size:14px;color:var(--text-2)">VRChatをはじめとするバーチャル空間の文化やユーザー行動を理解し、企業や自治体の企画を、自然に参加される体験へ変換します。</p>
+        <h3 style="font-size:20px;margin:10px 0 14px">企画・制作・運営まで一気通貫</h3>
+        <p style="font-size:14px;color:var(--text-2)">アイデア段階の壁打ちから、体験設計、制作、公開後の運営・改善まで。分業では途切れがちなプロジェクト全体を、ひとつの視点で見通して進行します。</p>
       </div>
       <div class="card" style="padding:40px 36px">
         <span class="svc-num">04</span>
         <h3 style="font-size:20px;margin:10px 0 14px">案件ごとに最適なチームを組成</h3>
-        <p style="font-size:14px;color:var(--text-2)">3D、映像、イベント、AI、Webなど、企画に応じて適切なクリエイターや技術者と連携します。</p>
+        <p style="font-size:14px;color:var(--text-2)">3D、映像、AI、Webなど各分野のクリエイターネットワークから、企画ごとに最適な布陣を組成。コンパクトな体制のまま、速さと精度を両立します。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 3. VRChat Official Partner -->
-<section style="background:var(--bg-2)">
+<section id="vrchat" style="background:var(--bg-2)">
   <div class="wrap">
-    <div style="padding:36px;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 100%);border-radius:16px;color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
+    <div style="padding:40px 44px;background:var(--color-ink);border-radius:var(--radius-card);color:var(--color-accent-ink);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
       <div>
-        <div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.15em;opacity:.8;margin-bottom:8px">OFFICIAL PARTNER</div>
-        <h3 style="font-size:22px;margin:0 0 10px;color:#fff">VRChat Official Partner</h3>
-        <p style="font-size:14px;opacity:.9;margin:0;max-width:560px">往来はVRChatの公式パートナーとして、企業・自治体のVRChat活用を支援しています。企画設計、ワールド制作、イベント運営までご相談いただけます。</p>
+        <div style="font-family:var(--font-body);font-size:var(--text-xs);letter-spacing:.18em;color:oklch(55% 0.006 260);margin-bottom:10px">OFFICIAL PARTNER</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-xl);margin:0 0 12px;color:var(--color-accent-ink);letter-spacing:-0.02em;font-weight:700">VRChat Official Partner</h3>
+        <p style="font-family:var(--font-body);font-size:var(--text-sm);color:oklch(78% 0.008 258);margin:0;max-width:560px;line-height:2.0">往来はVRChatの公式パートナー（国内3社目）として、企業・自治体のVRChat活用を支援しています。企画設計、ワールド制作、イベント運営までご相談いただけます。</p>
       </div>
-      <div style="flex-shrink:0;text-align:center">
-        <div style="font-family:'Poppins',sans-serif;font-size:11px;opacity:.7;margin-bottom:6px">JAPAN</div>
-        <div style="font-family:'Poppins',sans-serif;font-size:36px;font-weight:800;line-height:1">3rd</div>
-        <div style="font-size:12px;opacity:.8;margin-top:4px">公式パートナー</div>
-      </div>
+      <img src="assets/images/vrchat_coverart.jpg" alt="VRChat" style="width:280px;max-width:100%;height:auto;flex-shrink:0;border-radius:var(--radius-card)">
     </div>
   </div>
 </section>
@@ -95,9 +120,7 @@
     <div class="tags" style="gap:10px;margin-top:32px">
       <span class="tag" style="padding:8px 20px">日産自動車株式会社</span>
       <span class="tag" style="padding:8px 20px">株式会社電通</span>
-      <span class="tag" style="padding:8px 20px">マクドナルド</span>
       <span class="tag" style="padding:8px 20px">高エネルギー加速器研究機構（KEK）</span>
-      <span class="tag" style="padding:8px 20px">トヨタ自動車</span>
       <span class="tag" style="padding:8px 20px">京セラ</span>
       <span class="tag" style="padding:8px 20px">横須賀市</span>
       <span class="tag" style="padding:8px 20px">PICO Technology</span>
@@ -111,9 +134,60 @@
   </div>
 </section>
 
+<!-- 4.2 PR -->
+<section style="background:var(--bg-2)">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:56px;align-items:center" class="vf-grid">
+    <div>
+    <p style="font-size:var(--text-md);color:var(--color-ink-2);letter-spacing:var(--track-body);margin:0 0 8px">届けるまでが、仕事。</p>
+    <h2 style="font-size:var(--text-2xl);letter-spacing:-0.01em">PR戦略に、強い。</h2>
+    <p style="font-size:var(--text-sm);color:var(--color-ink-2);line-height:2.0;max-width:700px;margin-top:var(--space-md)">体験は、届いてはじめて成果になります。往来には、メディア・ライター・PR会社との15年にわたる太いパイプがあります。だから、つくって終わりにせず、PRの戦略設計からアウトプットまでを企画に組み込める——これが他社にない往来の強みです。</p>
+    <p style="font-size:var(--text-xs);color:var(--color-ink-3);letter-spacing:var(--track-label);margin-top:var(--space-md);margin-bottom:6px">寄稿・掲載などの実績がある媒体（一部）</p>
+    <div class="tags" style="gap:10px;max-width:700px"><span class="tag" style="padding:8px 20px">ITmedia</span><span class="tag" style="padding:8px 20px">ギズモード・ジャパン</span><span class="tag" style="padding:8px 20px">CNET Japan</span><span class="tag" style="padding:8px 20px">DIME</span><span class="tag" style="padding:8px 20px">東洋経済オンライン</span><span class="tag" style="padding:8px 20px">J-CASTニュース</span><span class="tag" style="padding:8px 20px">ロケットニュース24</span><span class="tag" style="padding:8px 20px">KAI-YOU</span><span class="tag" style="padding:8px 20px">PANORA</span><span class="tag" style="padding:8px 20px">Mogura VR</span></div>
+    </div>
+    <!-- 仮画像（差し替え予定） -->
+    <div class="concept__ph" style="aspect-ratio:3/4;border-radius:var(--radius-card)">PR IMAGE</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 4.5 MESSAGE 代表メッセージ -->
+<section class="concept-section">
+  <div class="concept-wrap">
+    <div class="sec-label concept-label">MESSAGE</div>
+    <div class="concept">
+      <div class="concept__media">
+        <img src="assets/images/profile_azuma.jpg" alt="代表取締役 東 智美" style="object-position: 50% 12%">
+      </div>
+      <div class="concept__body">
+        <h2>代表メッセージ</h2>
+        <p>「メタバースやXRの相談って、どこに聞けばいいかわからない」——最初のご相談は、だいたいそこから始まります。私たちは創業初年度から日産自動車のバーチャル空間づくりに携わり、以来、企業と自治体の"はじめての挑戦"を体験のかたちにしてきました。まだ企画になっていなくて大丈夫です。何ができるか、一緒に考えるところからご一緒します。</p>
+        <p style="margin-bottom:0">株式会社往来 代表取締役 東 智美</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4.6 執筆・登壇 -->
+<section style="background:var(--bg-2)">
+  <div class="wrap">
+  <div style="max-width:880px">
+    <div class="sec-label">MEDIA</div>
+    <h2>執筆・登壇</h2>
+    <div class="news-item"><time>2024.09</time><span class="chip">執筆</span><span>CGWORLD 2024年9月号「VRChatの歩き方 FAQ」特集を制作担当（武者良太氏と共同）</span></div>
+    <div class="news-item"><time>2022.12</time><span class="chip">出版</span><span>『アバターワーク』刊行</span></div>
+    <div class="news-item"><time>2022.01</time><span class="chip">出版</span><span>『メタバースの歩き方』刊行に編者として参加</span></div>
+    <div class="news-item"><time>2021.03</time><span class="chip">出版</span><span>『仮想空間とVR』刊行</span></div>
+    <div class="news-item"><time>—</time><span class="chip">登壇</span><span>エンジン01 ほか、XR・メタバース関連のセミナー登壇多数</span></div>
+  </div>
+  </div>
+</section>
+
 <!-- 5. COMPANY -->
 <section>
-  <div class="wrap" style="max-width:880px">
+  <div class="wrap">
+  <div style="max-width:880px">
     <div class="sec-label">COMPANY</div>
     <h2>会社概要</h2>
     <table class="meta-table" style="margin-top:32px">
@@ -121,19 +195,20 @@
       <tr><th>代表取締役社長</th><td>東 智美</td></tr>
       <tr><th>所在地</th><td>〒107-0052 東京都港区赤坂9-6-30 ルイマーブル乃木坂408</td></tr>
       <tr><th>設立日</th><td>2021年2月28日</td></tr>
-      <tr><th>事業内容</th><td>教育・産業向けXRコンテンツ制作／自治体・地域文化のXR体験化／VRChat・XRプロモーション／展示・LBE・イベント空間の体験設計</td></tr>
+      <tr><th>事業内容</th><td>教育・産業向けXRコンテンツ制作／VRChat・XRプロモーション／自治体・地域文化のXR体験化／展示・LBE・イベント空間の体験設計</td></tr>
       <tr><th>パートナーシップ</th><td>VRChat社 正式パートナー</td></tr>
     </table>
+  </div>
   </div>
 </section>
 
 <div class="cta-foot">
   <span class="sec-label">CONTACT</span>
   <h2>まずは、お気軽にご相談ください。</h2>
-  <p style="max-width:520px;margin:16px auto 0;font-size:15px;opacity:.7">VRChat、XR、AI、展示、イベントなど、まだ形になっていない企画段階からご相談いただけます。</p>
+  <p style="max-width:520px;margin:16px auto 0;font-size:15px;opacity:.7">初回のご相談は無料です。VRChat、XR、AI、展示、イベントなど、<br class="br-pc">まだ形になっていない情報収集の段階から、お気軽にどうぞ。</p>
   <div style="display:flex;gap:16px;justify-content:center;margin-top:32px;flex-wrap:wrap">
-    <a class="btn-solid" style="background:var(--purple)" href="contact.html">お問い合わせ</a>
-    <a class="btn-solid" style="background:var(--blue)" href="case.html">実績を見る</a>
+    <a class="btn-solid" href="contact.html">無料で相談する</a>
+    <a class="btn-solid" style="background:transparent;color:var(--color-ink);border:1.5px solid var(--color-ink)" href="works.html">実績を見る</a>
   </div>
 </div>
 
@@ -142,15 +217,16 @@
 <footer>
   <div class="wrap">
     <div>
-      <img src="assets/images/logo.png" alt="往来 OURAI" style="height:30px;margin-bottom:12px;filter:invert(1)" onerror="this.style.display='none'">
-      <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0 0 14px;line-height:1.9">
-        XR・AI・リアル空間を横断し、<br>企業や自治体の新しい体験を企画・制作・運営するクリエイティブスタジオです。
+      <img src="assets/images/logo.png" alt="往来 OURAI" style="height:38px;margin-bottom:14px" onerror="this.style.display='none'">
+      <p style="font-size:13px;color:var(--color-ink-2);margin:0 0 14px;line-height:1.9">
+        XR・AI・リアル空間を横断し、<br class="br-pc">企業や自治体の新しい体験を企画・制作・運営するクリエイティブスタジオです。
       </p>
     </div>
     <ul>
       <li><a href="about.html">ABOUT</a></li>
       <li><a href="service.html">SERVICE</a></li>
-      <li><a href="case.html">WORKS</a></li>
+      <li><a href="works.html">WORKS</a></li>
+      <li><a href="budget.html">BUDGET</a></li>
       <li><a href="news.html">NEWS</a></li>
       <li><a href="contact.html">CONTACT</a></li>
     </ul>
@@ -158,5 +234,27 @@
   </div>
 </footer>
 
+<script>
+/* ── ハンバーガーメニュー ── */
+(function(){
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  if (!menuBtn || !mobileNav) return;
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+    });
+  });
+})();
+</script>
+
+<a class="to-top" href="#" aria-label="ページの先頭へ戻る">↑ TOP</a>
 </body>
 </html>
