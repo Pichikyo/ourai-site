@@ -22,9 +22,28 @@ code{background:#eceae6;border-radius:4px;padding:1px 5px;font-size:12px}
 .console-bar .cb-home{display:inline-block;background:oklch(52% 0.19 264);color:#fff;font-size:13px;font-weight:600;padding:6px 16px;border-radius:999px;text-decoration:none}
 .console-bar .cb-home:hover{background:oklch(45% 0.19 264)}
 .console-bar .cb-page{font-size:13px;color:oklch(52% 0.19 264);font-weight:600}
+.top-bar{box-sizing:border-box;position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e4e3de;padding:10px 16px;display:flex;align-items:center;flex-wrap:wrap;gap:10px 20px}
+.top-bar .brand{display:flex;align-items:baseline;gap:8px;flex-shrink:0}
+.top-bar .brand h1{font-size:15px;font-weight:600;color:#1a1a18;white-space:nowrap}
+.top-bar .brand .sub{font-size:11px;color:#888780;white-space:nowrap}
+.top-bar .nav-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-left:auto}
+.nav-group{display:flex;align-items:center;gap:4px;flex-wrap:nowrap;padding:4px 10px;border-radius:999px}
+.nav-group-label{font-size:10px;letter-spacing:.1em;margin-right:6px;white-space:nowrap;font-weight:600}
+.top-bar a{font-size:12px;color:#6b6b67;white-space:nowrap;text-decoration:none;padding:4px 12px;border-radius:999px;transition:background-color .15s}
+.top-bar a:hover{background:rgba(0,0,0,.06)}
+.top-bar a.current{background:#2C2C2A;color:#fff;font-weight:600}
+.top-bar a.current:hover{background:#2C2C2A}
+@media (max-width:640px){
+  .top-bar{padding:8px 12px}
+  .top-bar .nav-wrap{margin-left:0}
+}
 </style>
 </head>
 <body>
+<div class="top-bar">
+  <div class="brand"><h1>🎛 往来管制室</h1><span class="sub">サイト運用の管制室</span></div>
+  <div class="nav-wrap"><span class="nav-group" style="background:#E6F1FB"><span class="nav-group-label" style="color:#185FA5">チーム</span><a href="https://inhouse-tasks.pages.dev/index.html">📒 台帳</a><a href="https://inhouse-tasks.pages.dev/gantt.html">📊 ガント</a><a href="https://inhouse-tasks.pages.dev/urgent.html">🔥 急ぎ</a></span><span class="nav-group" style="background:#FBEAF0"><span class="nav-group-label" style="color:#993556">智美</span><a href="https://inhouse-tasks.pages.dev/tomomi.html">📔 智美台帳</a><a href="https://inhouse-tasks.pages.dev/tomomi_gantt.html">📈 智美ガント</a></span><span class="nav-group" style="background:#EDEAF7"><span class="nav-group-label" style="color:#4A3B8C">サイト</span><a href="https://ourai-site.pages.dev/console/" class="current">往来</a><a href="https://toomo-site.pages.dev/console/">トーモ</a><a href="https://inhouse-tasks.pages.dev/sites">その他</a></span><span class="nav-group" style="background:#F1EFE8"><span class="nav-group-label" style="color:#5F5E5A">その他</span><a href="https://inhouse-tasks.pages.dev/案件番号一覧.html">🔢 案件番号</a><a href="https://inhouse-tasks.pages.dev/links.html">🔗 リンク</a><a href="https://inhouse-tasks.pages.dev/schedule.html">🕐bot時刻表</a></span></div>
+</div>
 <div class="console-bar"><a class="cb-home" href="index.html">🎛 往来 サイト管制室</a><span class="cb-page">台帳のルール</span></div>
 <div class="page-body">
 <h1>台帳のルール</h1>
