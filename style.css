@@ -852,7 +852,7 @@ footer .copy {
 }
 
 /* SERVICE ページ内目次（4等分・枠いっぱい） */
-.svc-toc { display: flex; gap: 10px; margin-top: var(--space-xl); }
+.svc-toc { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--space-xl); }
 .svc-toc a {
   flex: 1;
   display: inline-flex;
