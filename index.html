@@ -14,6 +14,18 @@
 <meta property="og:image" content="https://ourai-site.pages.dev/assets/images/slide/pf_yokosuka_2023_10_01.jpg">
 <link rel="icon" type="image/png" href="assets/images/logo.png">
 <link rel="stylesheet" href="style.css">
+<style>
+/* featured（works.htmlの特集カードと同仕様） */
+.feat-card{display:flex;flex-direction:column;background:var(--color-white);border-radius:var(--radius-card);overflow:hidden;border:1px solid var(--color-rule);transition:border-color var(--dur-short) var(--ease-out);position:relative}
+.feat-card:hover{border-color:var(--color-ink-2);}
+.feat-card .thumb{position:relative;aspect-ratio:2/1;overflow:hidden;background:var(--color-paper);display:flex;align-items:center;justify-content:center;color:var(--color-ink-3);font-size:var(--text-sm)}
+.feat-card .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feat-card .body{padding:24px 28px;display:flex;flex-direction:column;flex:1}
+.feat-card h3{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;line-height:1.45;letter-spacing:0.04em;margin:12px 0 16px}
+.feat-badge{position:absolute;top:0;left:0;background:var(--color-ink);color:var(--color-accent-ink);font-family:var(--font-body);font-size:var(--text-xs);font-weight:700;letter-spacing:.15em;padding:6px 18px;border-radius:0 0 var(--radius-card) 0;z-index:1}
+.feat-card .count{font-size:var(--text-sm);color:var(--color-ink-3);font-family:var(--font-body);margin-top:10px}
+.feat-card .more-link{margin-top:auto;padding-top:16px;font-weight:700;font-size:14px;color:var(--blue)}
+</style>
 </head>
 <body>
 
@@ -67,7 +79,6 @@
         <a class="kv-slide" href="feature-yokosuka.html"><img src="assets/images/slide/pf_yokosuka_2023_10_01.jpg" alt="メタバースヨコスカ"><span class="kv-cap">VRChat ／ 横須賀市</span></a>
         <a class="kv-slide" href="feature-nissan-beams.html"><img src="assets/images/pf_nissan_heritageworld_202403_01.jpg" alt="日産 × BEAMS"><span class="kv-cap">VRChat ／ 日産 × BEAMS</span></a>
         <a class="kv-slide" href="feature-kyocera.html"><img src="assets/images/pf_kyocera_fineceramics_202408_01.jpg" alt="京セラ 産業XR"><span class="kv-cap">産業XR ／ 京セラ</span></a>
-        <a class="kv-slide" href="feature-mos.html"><img src="assets/images/slide/2304_p_img_mos_okada_image01.jpg" alt="モスバーガー"><span class="kv-cap">VRChat ／ モスバーガー</span></a>
       </div>
       <button class="kv-arrow kv-prev" id="kvPrev" type="button" aria-label="前の実績へ">‹</button>
       <button class="kv-arrow kv-next" id="kvNext" type="button" aria-label="次の実績へ">›</button>
@@ -363,49 +374,44 @@
 })();
 
 /* ── 実績データ（追加・並び替えはここを編集） ── */
+/* 特集カード仕様（works.htmlのfeat-cardと同じ文言・台帳F01/F02/F04） */
 const worksData = [
   {
-    client:      '横須賀市',
-    title:       'メタバースヨコスカ',
-    description: '地域の魅力をVRChat上で体験化した観光プロモーション。アバター用スカジャンは15万ダウンロードを記録。',
-    tags:        ['VRChat', '自治体', '観光PR'],
-    image:       'assets/images/slide/pf_yokosuka_2023_10_01.jpg',
-    link:        'feature-yokosuka.html',
+    platform: 'VRChat｜自治体',
+    title:    '観光PRが「15万着の着るファングッズ」に<br class="br-pc">横須賀市「メタバースヨコスカ」',
+    count:    '2023〜',
+    image:    'assets/images/slide/pf_yokosuka_2023_10_01.jpg',
+    link:     'feature-yokosuka.html',
   },
   {
-    client:      '日産自動車 × BEAMS',
-    title:       'VRChatコラボレーション企画',
-    description: 'ブランドとコミュニティをつなぐバーチャルイベントを企画・制作。創業初年度の2021年から4年継続するロングランプロジェクト。',
-    tags:        ['VRChat', 'ブランド', 'アパレル'],
-    image:       'assets/images/pf_nissan_heritageworld_202403_01.jpg',
-    link:        'feature-nissan-beams.html',
+    platform: 'VRChat｜企業プロモーション',
+    title:    '他社に先駆けたVR施策、4年続くブランド接点<br class="br-pc">日産自動車 バーチャル共創空間',
+    count:    '2021〜',
+    image:    'assets/images/pf_nissan_heritageworld_202403_01.jpg',
+    link:     'feature-nissan-beams.html',
   },
   {
-    client:      '高エネルギー加速器研究機構 KEK',
-    title:       '加速器ワールド制作',
-    description: '巨大な研究施設や加速器の仕組みを、VRChat上で体験的に学べる教育用ワールドとして制作。',
-    tags:        ['VRChat', '教育XR', '科学コミュニケーション'],
-    image:       '',
-    link:        'works.html',
+    platform: '産業XR',
+    platformColor: '#22a08a',
+    title:    '技術は、説明するより体験させる<br class="br-pc">京セラ 産業XR',
+    count:    '2022〜',
+    image:    'assets/images/pf_kyocera_fineceramics_202408_01.jpg',
+    link:     'feature-kyocera.html',
   },
 ];
 
 const grid = document.getElementById('works-grid');
-worksData.forEach((w, i) => {
-  const tagHtml = w.tags.map((t, j) =>
-    `<span class="tag${j === 0 ? ' cat' : ''}">${t}</span>`
-  ).join('');
-  const thumbHtml = w.image
-    ? `<img src="${w.image}" alt="${w.title}" style="width:100%;height:100%;object-fit:cover">`
-    : `<span style="font-size:11px;letter-spacing:.1em;color:var(--text-3)">CASE IMAGE</span>`;
+worksData.forEach((w) => {
+  const platformStyle = w.platformColor ? ` style="border-color:${w.platformColor}"` : '';
   grid.innerHTML += `
-    <a class="card" href="${w.link}">
-      <div class="thumb" style="overflow:hidden">${thumbHtml}</div>
+    <a class="feat-card" href="${w.link}">
+      <span class="feat-badge">特集</span>
+      <div class="thumb"><img src="${w.image}" alt=""></div>
       <div class="body">
-        <div class="platform">${w.client}</div>
+        <div class="platform"${platformStyle}>${w.platform}</div>
         <h3>${w.title}</h3>
-        <p style="font-size:14px;color:var(--text-2);margin:4px 0 12px;line-height:1.85">${w.description}</p>
-        <div class="tags">${tagHtml}</div>
+        <div class="count">${w.count}</div>
+        <div class="more-link">特集を読む →</div>
       </div>
     </a>`;
 });
