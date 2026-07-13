@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>往来 サイト管制室</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;background:#f5f4f2;color:#1a1a18;font-size:14px}
+.page-body{max-width:920px;margin:0 auto;padding:2.5rem 1.5rem 3rem}
+h1{font-size:20px;font-weight:600;margin-bottom:10px}
+.lead{font-size:13px;color:#6b6b67;line-height:1.7;margin-bottom:2rem;padding:12px 14px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+h2.sec{font-size:13px;font-weight:600;color:#6b6b67;letter-spacing:.08em;margin:1.8rem 0 .7rem}
+h2.sec:first-of-type{margin-top:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{display:block;background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.07);padding:18px 18px;text-decoration:none;color:inherit;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 4px 12px rgba(0,0,0,.1);transform:translateY(-1px)}
+.card .icon{font-size:22px;margin-bottom:8px;display:block}
+.card h3{font-size:14px;font-weight:600;margin-bottom:4px;color:#1a1a18}
+.card p{font-size:12px;color:#888780;line-height:1.5}
+.card .ext{font-size:10px;color:#aaa;margin-top:6px}
+.card.placeholder{opacity:.55;background:#fafaf8;border:1px dashed #c9c5bd;box-shadow:none;cursor:default}
+.card.placeholder:hover{box-shadow:none;transform:none}
+</style>
+</head>
+<body>
+<div class="page-body">
+  <h1>往来 サイト管制室</h1>
+  <p class="lead">このサイトの実績・お知らせは台帳（JSON）を正本に管理されています。ここは台帳の中身の確認と、サイト運用に必要なものが揃う管制室です。</p>
+
+  <h2 class="sec">サイトまわり</h2>
+  <div class="cards">
+    <a class="card" href="http://localhost:8742/" target="_blank" rel="noopener">
+      <span class="icon">🔎</span>
+      <h3>ローカル確認</h3>
+      <p>手元での表示確認用（<code>python3 -m http.server 8742</code>）。起動していないと開けません。</p>
+    </a>
+    <a class="card" href="https://ourai-site.pages.dev/" target="_blank" rel="noopener">
+      <span class="icon">🌐</span>
+      <h3>本番サイト</h3>
+      <p>現在公開中の往来サイト（Cloudflare Pages・固定URL）。</p>
+      <p class="ext">外部リンク</p>
+    </a>
+  </div>
+
+  <h2 class="sec">台帳</h2>
+  <div class="cards">
+    <a class="card" href="https://inhouse-tasks.pages.dev/ourai-works" target="_blank" rel="noopener">
+      <span class="icon">🏯</span>
+      <h3>実績台帳</h3>
+      <p>実績全件（正本データ）を表形式で確認できます。</p>
+      <p class="ext">外部リンク（inhouse-tasks.pages.dev）</p>
+    </a>
+    <a class="card" href="https://inhouse-tasks.pages.dev/ourai-copy-review" target="_blank" rel="noopener">
+      <span class="icon">🗂</span>
+      <h3>実績カード（確認）</h3>
+      <p>台帳の内容がそのままWebに出る値かどうかを、カード形式で確認できます。</p>
+      <p class="ext">外部リンク（inhouse-tasks.pages.dev）</p>
+    </a>
+    <a class="card" href="https://inhouse-tasks.pages.dev/ourai-news" target="_blank" rel="noopener">
+      <span class="icon">📰</span>
+      <h3>ニュース一覧（確認）</h3>
+      <p>お知らせ全件（正本データ）を、サイト表示と同じ並びで確認できます。</p>
+      <p class="ext">外部リンク（inhouse-tasks.pages.dev）</p>
+    </a>
+    <div class="card placeholder">
+      <span class="icon">📄</span>
+      <h3>台帳データ（JSON）</h3>
+      <p>正本の生データはこの管制室にはコピーを置いていません（往来は引き渡し予定がないため）。場所: <code>~/inhouse-bot/ourai-works-ledger.json</code> / <code>ourai-news-ledger.json</code></p>
+    </div>
+  </div>
+
+  <h2 class="sec">運用手引き</h2>
+  <div class="cards">
+    <a class="card" href="guide-request.html">
+      <span class="icon">📮</span>
+      <h3>依頼のしかた</h3>
+      <p>AIへの頼み方と、添えると助かる情報（日付・URL・文言）。</p>
+    </a>
+    <a class="card" href="guide-ledger.html">
+      <span class="icon">📐</span>
+      <h3>台帳のルール</h3>
+      <p>1件のかたち（no・日付・カテゴリ）と、やってはいけないこと。</p>
+    </a>
+    <a class="card" href="guide-deploy.html">
+      <span class="icon">🚀</span>
+      <h3>反映とデプロイ</h3>
+      <p>同期→確認→push（CI経由デプロイ）の3歩。台帳を直しただけでは反映されません。</p>
+    </a>
+    <a class="card" href="guide-trouble.html">
+      <span class="icon">🆘</span>
+      <h3>困ったとき</h3>
+      <p>反映されない・壊したかも・判断に迷う、の対処。</p>
+    </a>
+  </div>
+
+  <h2 class="sec">AIO・SEOの面（AI・検索エンジンに読まれるファイル）</h2>
+  <div class="cards">
+    <a class="card" href="../works.md" target="_blank" rel="noopener">
+      <span class="icon">📄</span>
+      <h3>works.md（AIO用）</h3>
+      <p>実績一覧＋お知らせ年表。AIクローラー向けの一次情報で、台帳から自動生成されます。</p>
+    </a>
+    <a class="card" href="../llms.txt" target="_blank" rel="noopener">
+      <span class="icon">📄</span>
+      <h3>llms.txt</h3>
+      <p>AIクローラー向けの会社案内。会社情報・主要ページ・よくある誤解をまとめています。</p>
+    </a>
+    <a class="card" href="../company-record.html" target="_blank" rel="noopener">
+      <span class="icon">🗓</span>
+      <h3>company-record.html</h3>
+      <p>出典付きの活動年表・実績数字の一次情報源（ナビからリンクしない独立運用）。</p>
+    </a>
+    <a class="card" href="../sitemap.xml" target="_blank" rel="noopener">
+      <span class="icon">🗺</span>
+      <h3>sitemap.xml</h3>
+      <p>検索エンジンへの全ページ案内図。</p>
+    </a>
+    <a class="card" href="../robots.txt" target="_blank" rel="noopener">
+      <span class="icon">🤖</span>
+      <h3>robots.txt</h3>
+      <p>クローラー向けの入場ルール（AIクローラーはブロックしない方針）。</p>
+    </a>
+  </div>
+
+  <h2 class="sec">スキーム</h2>
+  <div class="cards">
+    <a class="card" href="https://ourai-web-scheme.pages.dev/" target="_blank" rel="noopener">
+      <span class="icon">🧩</span>
+      <h3>スキーム紹介ページ</h3>
+      <p>台帳を正本に管理するこのサイト運用スキーム全体の紹介ページです。</p>
+      <p class="ext">外部リンク（別サイト）</p>
+    </a>
+  </div>
+</div>
+</body>
+</html>

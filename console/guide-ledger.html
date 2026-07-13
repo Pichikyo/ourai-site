@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>台帳のルール｜往来 サイト管制室</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;background:#f5f4f2;color:#1a1a18;font-size:14px;line-height:1.9}
+.page-body{max-width:760px;margin:0 auto;padding:2rem 1.5rem 3rem}
+.back{font-size:12px;color:#6b6b67;text-decoration:none;display:inline-block;margin-bottom:1.2rem}
+.back:hover{text-decoration:underline}
+h1{font-size:18px;font-weight:600;margin-bottom:1rem}
+h2{font-size:14px;font-weight:600;margin:1.6rem 0 .5rem;border-left:3px solid oklch(52% 0.19 264);padding-left:8px}
+p,li{font-size:13px;color:#3a3a36}
+ul,ol{margin:0.4rem 0 0.8rem 1.4rem}
+.card{background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06);padding:16px 18px;margin-bottom:1rem}
+code{background:#eceae6;border-radius:4px;padding:1px 5px;font-size:12px}
+.note{font-size:12px;color:#8a5a1e;background:#FBF3E6;border-radius:6px;padding:8px 12px;margin:.6rem 0}
+.console-bar{background:#fff;border-bottom:2px solid oklch(52% 0.19 264);padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.console-bar .cb-home{display:inline-block;background:oklch(52% 0.19 264);color:#fff;font-size:13px;font-weight:600;padding:6px 16px;border-radius:999px;text-decoration:none}
+.console-bar .cb-home:hover{background:oklch(45% 0.19 264)}
+.console-bar .cb-page{font-size:13px;color:oklch(52% 0.19 264);font-weight:600}
+</style>
+</head>
+<body>
+<div class="console-bar"><a class="cb-home" href="index.html">🎛 往来 サイト管制室</a><span class="cb-page">台帳のルール</span></div>
+<div class="page-body">
+<h1>台帳のルール</h1>
+
+<div class="card">
+<p>往来は実績とお知らせの<strong>2本立て台帳</strong>です。どちらもサイトの表示面はすべてここから自動生成されます。直接編集はできません。</p>
+<h2>実績台帳（ourai-works-ledger.json）</h2>
+<ul>
+<li><code>no</code> — 通常案件は連番、特集（クライアント束ね）扱いは<code>F01</code>のような<code>F</code>始まりの番号。<strong>一度使った番号は再利用しない</strong></li>
+<li><code>client</code> / <code>title</code> / <code>date</code> — クライアント名・案件タイトル・期間</li>
+<li><code>tags</code> — 1個目が主カテゴリ（サイトで強調表示）。ジャンル族優先順・役務族優先順が決まっているため、新しいタグを自己判断で増やさない</li>
+<li><code>featured</code> — trueで特集扱い</li>
+<li><code>link</code> — 特集ページ（feature-*.html）がある場合のみ</li>
+</ul>
+<h2>ニュース台帳（ourai-news-ledger.json）</h2>
+<ul>
+<li><code>no</code> — N001からの連番。<strong>一度使った番号は再利用しない</strong>（欠番はOK）</li>
+<li><code>date</code> — 「2026.07」が基本。年だけ・空欄（date_label併記）も可</li>
+<li><code>category</code> — <strong>PRESS／TOPICS／WORKS／MEDIA の4種（英語表記）のみ</strong>。実績連動の1行は常にWORKS。対応外のカテゴリを書くと同期（sync）が警告します</li>
+<li><code>text</code> — 表示される文言（実績連動の場合はworks側タイトルと同一文言でよい）</li>
+<li><code>link</code> — 任意。相対パス（feature-*.html等）またはhttp(s)絶対URLのみ</li>
+<li><code>show</code> — falseにするとサイトから消える（台帳には残る）</li>
+</ul>
+<h2>やってはいけないこと</h2>
+<ul>
+<li>news.html／index.html／works.mdなど<strong>生成物を直接編集する</strong>（次の同期で消えます。直すのは台帳）</li>
+<li>HTMLのマーカーコメント（NEWS-SYNC等）の間を手で書き換える</li>
+<li>台帳の<code>no</code>番号を使い回す（アンカーリンクの一意性が壊れる）</li>
+<li>実績数字を出典なしで書き換える（出典 or 「自社調べ（時点）」表記が必須）</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

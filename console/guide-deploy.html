@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>反映とデプロイ｜往来 サイト管制室</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;background:#f5f4f2;color:#1a1a18;font-size:14px;line-height:1.9}
+.page-body{max-width:760px;margin:0 auto;padding:2rem 1.5rem 3rem}
+.back{font-size:12px;color:#6b6b67;text-decoration:none;display:inline-block;margin-bottom:1.2rem}
+.back:hover{text-decoration:underline}
+h1{font-size:18px;font-weight:600;margin-bottom:1rem}
+h2{font-size:14px;font-weight:600;margin:1.6rem 0 .5rem;border-left:3px solid oklch(52% 0.19 264);padding-left:8px}
+p,li{font-size:13px;color:#3a3a36}
+ul,ol{margin:0.4rem 0 0.8rem 1.4rem}
+.card{background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06);padding:16px 18px;margin-bottom:1rem}
+code{background:#eceae6;border-radius:4px;padding:1px 5px;font-size:12px}
+.note{font-size:12px;color:#8a5a1e;background:#FBF3E6;border-radius:6px;padding:8px 12px;margin:.6rem 0}
+.console-bar{background:#fff;border-bottom:2px solid oklch(52% 0.19 264);padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.console-bar .cb-home{display:inline-block;background:oklch(52% 0.19 264);color:#fff;font-size:13px;font-weight:600;padding:6px 16px;border-radius:999px;text-decoration:none}
+.console-bar .cb-home:hover{background:oklch(45% 0.19 264)}
+.console-bar .cb-page{font-size:13px;color:oklch(52% 0.19 264);font-weight:600}
+</style>
+</head>
+<body>
+<div class="console-bar"><a class="cb-home" href="index.html">🎛 往来 サイト管制室</a><span class="cb-page">反映とデプロイ</span></div>
+<div class="page-body">
+<h1>反映とデプロイ</h1>
+
+<div class="card">
+<p>台帳を直しただけではサイトは変わりません。<strong>同期 → 確認 → push（CI経由デプロイ）</strong>の3歩で本番に届きます（通常はAIがまとめて実行します）。</p>
+<ol>
+<li><strong>同期</strong> — 台帳の正本があるディレクトリ（<code>~/inhouse-bot/</code>）で実行。ターミナルで次のコマンドをそのままコピペ<br><code>cd ~/inhouse-bot && python3 ourai_sync.py</code><br>台帳から works.md・news.html／index.htmlのNEWS-SYNC区間・ourai-copy-review.htmlを再生成</li>
+<li><strong>社内確認面の更新</strong>（実績・ニュースの確認カード/一覧を社外にも見せられる形にする場合）<br><code>cd ~/inhouse-bot && python3 generate_html.py</code><br>inhouse-tasks.pages.dev（ourai-copy-review／ourai-works／ourai-news）へ台帳を同梱デプロイ</li>
+<li><strong>確認</strong> — この管制室の「台帳」節にある確認面リンク、またはローカル確認（<code>http://localhost:8742/</code>）で答え合わせ</li>
+<li><strong>push（本番デプロイ）</strong> — 往来サイトのリポジトリ（<code>~/dev/ourai-site/</code>）で実行<br><code>cd ~/dev/ourai-site && git add -A && git commit -m "..." && git push origin main</code><br><strong>GitHub Actions（<code>.github/workflows/deploy.yml</code>）がpushを検知して自動でCloudflare Pagesへデプロイします。</strong>手動で<code>wrangler</code>を叩く必要はありません（CIが落ちている緊急時のみ例外的に手動デプロイを使う運用）</li>
+</ol>
+<p class="note">往来は<strong>CI経由（push＝デプロイ）</strong>の案件です。MiTERU等の <code>./deploy.sh</code> 手動実行とは方式が異なるので混同しないこと。</p>
+<p class="note">智美さんがチャットで内容を一つずつ指示・確認した変更は、PRを通さず直push＋デプロイしてよい運用（会話そのものが承認にあたるため）。独自判断を含む変更（デザイン・構成・新ページ等）は従来どおりPR経由で承認を得る。</p>
+</div>
+</div>
+</body>
+</html>

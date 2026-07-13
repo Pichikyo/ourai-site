@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>困ったとき｜往来 サイト管制室</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;background:#f5f4f2;color:#1a1a18;font-size:14px;line-height:1.9}
+.page-body{max-width:760px;margin:0 auto;padding:2rem 1.5rem 3rem}
+.back{font-size:12px;color:#6b6b67;text-decoration:none;display:inline-block;margin-bottom:1.2rem}
+.back:hover{text-decoration:underline}
+h1{font-size:18px;font-weight:600;margin-bottom:1rem}
+h2{font-size:14px;font-weight:600;margin:1.6rem 0 .5rem;border-left:3px solid oklch(52% 0.19 264);padding-left:8px}
+p,li{font-size:13px;color:#3a3a36}
+ul,ol{margin:0.4rem 0 0.8rem 1.4rem}
+.card{background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06);padding:16px 18px;margin-bottom:1rem}
+code{background:#eceae6;border-radius:4px;padding:1px 5px;font-size:12px}
+.note{font-size:12px;color:#8a5a1e;background:#FBF3E6;border-radius:6px;padding:8px 12px;margin:.6rem 0}
+.console-bar{background:#fff;border-bottom:2px solid oklch(52% 0.19 264);padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.console-bar .cb-home{display:inline-block;background:oklch(52% 0.19 264);color:#fff;font-size:13px;font-weight:600;padding:6px 16px;border-radius:999px;text-decoration:none}
+.console-bar .cb-home:hover{background:oklch(45% 0.19 264)}
+.console-bar .cb-page{font-size:13px;color:oklch(52% 0.19 264);font-weight:600}
+</style>
+</head>
+<body>
+<div class="console-bar"><a class="cb-home" href="index.html">🎛 往来 サイト管制室</a><span class="cb-page">困ったとき</span></div>
+<div class="page-body">
+<h1>困ったとき</h1>
+
+<div class="card">
+<h2>直したのにサイトが変わらない</h2>
+<ul>
+<li>同期（sync）・push（CI経由デプロイ）まで済んでいるか確認。台帳を直しただけでは反映されません</li>
+<li><code>gh run list --workflow=deploy.yml</code> でGitHub Actionsが成功しているか確認できます</li>
+<li>ブラウザのキャッシュが古いことも。強制再読み込み（Cmd+Shift+R）を一度</li>
+</ul>
+<h2>間違えて壊したかも</h2>
+<ul>
+<li><strong>往来サイト側</strong>（<code>~/dev/ourai-site/</code>）は<strong>Gitで履歴管理</strong>されているので、<code>git log</code> / <code>git diff</code> でどの時点にも戻せます。慌てて上書きせず、その状態のまま相談を</li>
+<li><strong>台帳・同期スクリプト側</strong>（<code>~/inhouse-bot/</code>、台帳の正本が置いてある場所）も<strong>Gitで管理されている</strong>ので、同様に <code>cd ~/inhouse-bot && git log</code> で履歴を確認し、必要なら該当ファイルだけ過去のコミットから復元できます</li>
+<li>どちらのリポジトリを戻すべきかで対処が変わるため、まず「サイト側の見た目が壊れた」のか「台帳（inhouse-bot側）の中身が壊れた」のかを切り分けてから復旧してください</li>
+</ul>
+<p class="note">往来には引き渡し予定のバックアップZIP（MiTERU案件のような <code>*-site.zip</code> / <code>*-scheme-files.zip</code>）を作っていません。復旧手段は上記のGit履歴のみです。</p>
+<h2>判断に迷う</h2>
+<ul>
+<li>載せていいか迷う内容・文言・カテゴリの判断は、社内台帳の正本（<code>~/inhouse-bot/ourai-works-ledger.json</code> / <code>ourai-news-ledger.json</code>）を確認するか、智美さんに相談してください</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
