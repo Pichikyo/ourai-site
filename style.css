@@ -66,8 +66,8 @@
   --radius-input: 2px;
 
   /* === Header === */
-  --header-h:    140px;
-  --header-h-sp: 88px;
+  --header-h:    80px;
+  --header-h-sp: 80px;
 
   /* === Legacy aliases (transitional) === */
   --bg:     var(--color-paper);
