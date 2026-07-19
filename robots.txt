@@ -1,4 +1,9 @@
+# TODO: 本番切替時に Allow に戻す＋Sitemap行復活
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://ouraivr.com/sitemap.xml
+# --- 元の内容（本番切替時に戻す） ---
+# User-agent: *
+# Allow: /
+#
+# Sitemap: https://ouraivr.com/sitemap.xml
