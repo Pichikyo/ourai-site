@@ -430,6 +430,14 @@ main { padding-top: var(--header-h); }
   .concept__body { padding-top: 0; padding-right: 0; max-width: none; }
 }
 
+/* 代表メッセージ: 写真の表示幅を従来の約1/3に（2026-10-26） */
+.concept--message { grid-template-columns: minmax(0, 0.205fr) 1fr; }
+.concept--message .concept__body { max-width: none; }
+@media (max-width: 860px) {
+  .concept--message { grid-template-columns: 1fr; }
+  .concept--message .concept__media { width: 33.333%; min-width: 96px; }
+}
+
 /* ── Text link with arrow (WhO VIEW MORE) ── */
 .btn {
   display: inline-flex;
